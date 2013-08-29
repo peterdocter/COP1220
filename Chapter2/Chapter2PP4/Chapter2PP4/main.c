@@ -21,7 +21,7 @@ int main(int argc, const char *argv[])
 	printf("Please enter the tempreature in degrees fahrenheit.\n");
 	scanf("%lf", &fahrenheit);
 	celcius = returnCelcius(fahrenheit);
-	printf("%lf degrees Fahrenheit is %lf Celsius",fahrenheit, celcius);
+	printf("%lf degrees Fahrenheit is %lf Celsius", fahrenheit, celcius);
 
 	return 0;
 }
@@ -30,7 +30,7 @@ double returnCelcius(double fahrenheitTemp)
 {
 	double temp = (FIVE_NINTHS * (fahrenheitTemp - 32));
 
-	//printf("%lf\n", fahrenheitTemp);
+	// printf("%lf\n", fahrenheitTemp);
 
 	return temp;
 }
