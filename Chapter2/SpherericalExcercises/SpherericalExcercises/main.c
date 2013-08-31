@@ -42,18 +42,15 @@ int main(int argc, const char *argv[])
 	pleaseEnterRadius();
     circumference = calculateCircumference(radius);
 	calculateRadius(circumference);
-    
   
    	printf("Your circle circumference = %lf\n\n", circumference);
-   	//calculateRadius(circumference);
    	printf("Your circle radius = %lf\n\n", calculateRadius(circumference));
- 
     
     SAS = calculateSAS(radius);
     AC = calculateAC(radius);
-    printf("Useful constants:\n\n");
-	printf("Radian in degree units = %lf\n", R);
-	printf("Surface Area of Sphere on degree units= %lf\n", SAS);
+    //printf("Useful constants:\n\n");
+	//printf("Radian in degree units = %lf\n", R);
+	printf("Surface Area of Sphere on degree units = %lf\n", SAS);
 	printf("Area of a Circle in degree units = %lf\n", AC);
 
 	/*
