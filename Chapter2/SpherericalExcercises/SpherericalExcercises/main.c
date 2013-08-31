@@ -10,6 +10,8 @@
 #include <math.h>
 
 double radius;
+double circumference;
+
 #define CIRCUMFERENCE_360 360
 double R, C, SAS, AC;
 
@@ -20,6 +22,10 @@ double calculateRadian();
 double calculateSAS(double r);
 
 double calculateAC(double sas);
+
+double calculateRadius(double r);
+
+double calculateCircumference(double r);
 
 void welcome()
 {
@@ -36,10 +42,12 @@ int main(int argc, const char *argv[])
 	pleaseEnterRadius();
 	SAS = calculateSAS(radius);
     AC = calculateAC(SAS);
+    circumference = calculateCircumference(radius);
     
-	printf("radian = %lf\n", R);
-	printf("SAS = %lf\n", SAS);
-	printf("AC = %lf\n", AC);
+	printf("Radian in degree units = %lf\n", R);
+	printf("Surface Area of Sphere on degree units= %lf\n", SAS);
+	printf("Area of a Circle in degree units = %lf\n", AC);
+	printf("Your circle circumference = %lf\n", circumference);
 
 	/*
 	 *
@@ -101,13 +109,13 @@ double calculateSAS(double sas)
 	// double Radian = 360 / dbPi;
 	// printf("Radian = %f", Radian);
 	// double R = Radian;
-	printf("R = Radian = %f\n", R);
+	//printf("R = Radian = %f\n", R);
 	// double thirdRadian = R*0.33333333;
 	// printf("thirdRadian = %f",thirdRadian);
 	// double halfRadian = R*0.5;
 	// printf("halfRadian = %f",halfRadian);
 	// int Circumference = 360;// in degrees
-	printf("Circumference in degrees = %lf\n", C);
+	//printf("Circumference in degrees = %lf\n", C);
 
 	//printf("\n");
 	//printf("\n");
@@ -197,10 +205,18 @@ double calculateSAS(double sas)
 }
 
 double calculateAC(double sas){
-    double ac = 0.0;
     
-    ac = sas/4;
+    return sas/4;
+}
+
+double calculateRadius(double c){
+
+    return radius = 0.5*(c/360)*R;
     
-    return ac;
+}
+
+double calculateCircumference(double r){
+
+    return (r/R)*C;
     
 }
