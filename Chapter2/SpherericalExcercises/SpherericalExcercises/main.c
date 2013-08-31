@@ -50,7 +50,7 @@ int main(int argc, const char *argv[])
  
     
     SAS = calculateSAS(radius);
-    AC = calculateAC(SAS);
+    AC = calculateAC(radius);
     printf("Useful constants:\n\n");
 	printf("Radian in degree units = %lf\n", R);
 	printf("Surface Area of Sphere on degree units= %lf\n", SAS);
@@ -95,7 +95,7 @@ double calculateRadian()
 	return R = C / (2.0 * M_PI);
 }
 
-double calculateSAS(double sas)
+double calculateSAS(double r)
 {
 	//printf("Useful constants \n");
 	//printf("\n");
@@ -210,12 +210,38 @@ double calculateSAS(double sas)
 	 *
 	 */
 
-	return (C * 4) * (0.5 * R);
+    
+    // r^2 * π * 4 = Surface Area of a Sphere
+    //printf("%lf\n", pow(r, 2)*M_PI*4.0);
+    
+	return (C * 4) * (0.5 * (r/R));
 }
 
-double calculateAC(double sas){
+double calculateAC(double r){
+   
     
-    return sas/4;
+    //SAS/4 = Area Circle = AC
+
+    
+    //*   SAS = 360 * 4 * 1/2R
+    //*   SAS/4 = Area Circle = AC
+    //*   SAS/1/3R = Volume Sphere = VS
+   
+    
+    /*
+	 *
+	 *   Traditional Formulas
+	 *   r = radius
+	 *   r^2 * π = Area Circle
+	 *   r^2 * π * 4 = Surface Area of a Sphere
+	 *   (4π * r^3)/3 = Volume of a Sphere
+	 *
+	 */
+    
+    // r^2 * π * 4 = Surface Area of a Sphere
+    //printf("Area Circle = %lf\n", M_PI*pow(r, 2));
+    
+    return (C * 4) * (0.5 * (r/R))/4;
 }
 
 double calculateRadius(double c){
@@ -226,6 +252,8 @@ double calculateRadius(double c){
 
 double calculateCircumference(double r){
 
+    
+    //printf("Circumference Circle = %lf\n", 2*M_PI*r);
     return (r/R)*C;
     
 }
