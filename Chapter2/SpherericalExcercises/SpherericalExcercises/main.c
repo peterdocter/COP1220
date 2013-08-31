@@ -29,7 +29,7 @@ double calculateCircumference(double r);
 
 void welcome()
 {
-	printf("Welcome to Randy McMillan's Ansi C Sphererical Math Excercises!\n");
+	printf("Welcome to Randy McMillan's Ansi C Sphererical Math Excercises!\n\n");
 }
 
 int main(int argc, const char *argv[])
@@ -40,14 +40,21 @@ int main(int argc, const char *argv[])
 	R	= calculateRadian();
 
 	pleaseEnterRadius();
-	SAS = calculateSAS(radius);
-    AC = calculateAC(SAS);
     circumference = calculateCircumference(radius);
+	calculateRadius(circumference);
     
+  
+   	printf("Your circle circumference = %lf\n\n", circumference);
+   	//calculateRadius(circumference);
+   	printf("Your circle radius = %lf\n\n", calculateRadius(circumference));
+ 
+    
+    SAS = calculateSAS(radius);
+    AC = calculateAC(SAS);
+    printf("Useful constants:\n\n");
 	printf("Radian in degree units = %lf\n", R);
 	printf("Surface Area of Sphere on degree units= %lf\n", SAS);
 	printf("Area of a Circle in degree units = %lf\n", AC);
-	printf("Your circle circumference = %lf\n", circumference);
 
 	/*
 	 *
@@ -78,6 +85,8 @@ double pleaseEnterRadius()
 {
 	printf("Please enter the radius. --> ");
 	scanf("%lf", &radius);
+   	printf("");
+ 
 	return radius;
 }
 
@@ -211,7 +220,7 @@ double calculateAC(double sas){
 
 double calculateRadius(double c){
 
-    return radius = 0.5*(c/360)*R;
+    return radius = (c/360)*R;
     
 }
 
