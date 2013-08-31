@@ -54,22 +54,19 @@ void pleaseEnterRadius()
 
 int main(int argc, const char *argv[])
 {
-   
-    calculateCircle();
+	calculateCircle();
 	return 0;
 }
 
-
-void calculateCircle(){
-
-    
-   	welcome();
+void calculateCircle()
+{
+	welcome();
 
 	C = CIRCUMFERENCE_360;
 	calculateRadian();
 
 	circumference = calculateCircumference(radius);
-	//calculateRadius(circumference);
+	// calculateRadius(circumference);
 
 	printf("Circumference of Circle/Sphere = %lf\n\n", circumference);
 	// printf("Your circle radius = %lf\n\n", calculateRadius(circumference));
@@ -82,24 +79,21 @@ void calculateCircle(){
 
 	VS = calculateVolumeSphere(radius);
 	printf("Volume of Sphere  = %lf\n\n", VS);
-    
-    char yesOrNo[100];
-    printf("Would you like to calculate another? y/n ");
-    scanf("%s",yesOrNo);
-    
-    
-    if (strncmp(yesOrNo, "y", 2) == 0){
-        printf ("\n");
-    calculateCircle();
-    }
-    
-    if (strncmp(yesOrNo, "n", 2) == 0){
-        printf ("Good bye!");
-    //    int main(int argc, const char *argv[])
-    }
+
+	char yesOrNo[100];
+	printf("Would you like to calculate another? y/n ");
+	scanf("%s", yesOrNo);
+
+	if (strncmp(yesOrNo, "y", 2) == 0) {
+		printf("\n");
+		calculateCircle();
+	}
+
+	if (strncmp(yesOrNo, "n", 2) == 0) {
+		printf("Good bye!");
+	}
 
 }
-
 
 double calculateRadian()
 {
@@ -135,28 +129,24 @@ double calculateVolumeSphere(double r)
 	return calculateSAS(r) / 3;
 }
 
+/*
+ *
+ *   Traditional Formulas
+ *   r = radius
+ *   r^2 * π = Area Circle
+ *   r^2 * π * 4 = Surface Area of a Sphere
+ *   (4π * r^3)/3 = Volume of a Sphere
+ *
+ */
 
-
-
-	/*
-	 *
-	 *   Traditional Formulas
-	 *   r = radius
-	 *   r^2 * π = Area Circle
-	 *   r^2 * π * 4 = Surface Area of a Sphere
-	 *   (4π * r^3)/3 = Volume of a Sphere
-	 *
-	 */
-
-	/*
-	 *
-	 *   //Radian Based
-	 *
-	 *   R = Radian = 57.295780
-	 *
-	 *   SAS = 360 * 4 * 1/2R
-	 *   SAS/4 = Area Circle = AC
-	 *   SAS/1/3R = Volume Sphere = VS
-	 *
-	 */
-
+/*
+ *
+ *   //Radian Based
+ *
+ *   R = Radian = 57.295780
+ *
+ *   SAS = 360 * 4 * 1/2R
+ *   SAS/4 = Area Circle = AC
+ *   SAS/1/3R = Volume Sphere = VS
+ *
+ */
