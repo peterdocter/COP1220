@@ -143,7 +143,7 @@ double calculateVolumeSphere(double r)
  *
  *   //Radian Based
  *
- *   R = Radian = 57.295780
+ *   R = Radian = 57.25977951
  *
  *   SAS = 360 * 4 * 1/2R
  *   SAS/4 = Area Circle = AC
