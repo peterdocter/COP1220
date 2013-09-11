@@ -41,7 +41,7 @@ int main(int argc, const char *argv[])
 	double minutes	= 0,
 		seconds		= 0;
 
-	printf("%i,%i,%i,%i,%fl,%fl,%fl,%fl,%fl,%fl,%i", first_min, second_min, third_min, fourth_min, first_sec, second_sec, third_sec, fourth_sec, minutes, seconds, distance);
+	//printf("%i,%i,%i,%i,%fl,%fl,%fl,%fl,%fl,%fl,%i", first_min, second_min, third_min, fourth_min, first_sec, second_sec, third_sec, fourth_sec, minutes, seconds, distance);
 
     
     
@@ -49,7 +49,7 @@ int main(int argc, const char *argv[])
     
     
     ///calc feet per second
-    
+    calcFPS(first_min, first_sec);
     ///calc meters per second
     
     ///
@@ -74,7 +74,8 @@ int main(int argc, const char *argv[])
 double calcFPS(int min,double sec){
     double fps = 0;
     
-    
+    fps = ((min*60)+sec)/5280;
+    printf("%f",fps);
     return fps;
 }
 
