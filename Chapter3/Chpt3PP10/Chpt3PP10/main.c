@@ -7,27 +7,56 @@
 //
 
 #include <stdio.h>
-float calcCelcius(float depth);
-float calcFarenheit(float depth);
+#include <string.h>
 
 
+float celcius_at_depth(float depth);
+float farenheit(float depth);
+
+void calculate();
+    
 int main(int argc, const char * argv[])
 {
-
-    printf("Please enter a depth");
-    float depth = 0;
-    scanf("%f", &depth);
- 
-    float celcius = calcCelcius(depth);
-    
-    printf("It is %0.2f degrees Celcius at that depth.",celcius);
-    
-    // insert code here...
-    //printf("Hello, World!\n");
+    calculate();
     return 0;
 }
 
-float calcCelcius(float depth){
+
+void calculate(){
+
+     printf("Please enter a depth --> ");
+    float depth = 0;
+    scanf("%f", &depth);
+ 
+    float celcius = celcius_at_depth(depth);
+    
+    printf("It is %0.2f degrees Celcius at that depth.\n",celcius);
+    
+    
+    printf("It is %0.2f degrees Fahernheit at that depth.",farenheit(celcius));
+    // insert code here...
+    //printf("Hello, World!\n");
+    
+    
+    
+    char yesOrNo[100];
+	printf("Would you like to calculate another? y/n ");
+	scanf("%s", yesOrNo);
+    
+	if (strncmp(yesOrNo, "y", 2) == 0) {
+		printf("\n");
+		calculate();
+	}
+    
+	if (strncmp(yesOrNo, "n", 2) == 0) {
+		printf("Good bye!");
+	}
+
+ 
+
+}
+
+float celcius_at_depth(float depth){
 
     float celcius = 10*depth+20;
     
@@ -35,9 +64,9 @@ float calcCelcius(float depth){
 
 }
 
-float calcFarenheit(float depth){
+float farenheit(float celcius){
     
-    float farenheit = 0;
+    float farenheit = 1.8*celcius+32;
     
     
     
