@@ -18,6 +18,10 @@
  *   ￼￼￼
  */
 
+
+//https://www.google.com/search?client=safari&rls=en&q=feet+per+second+to+mph
+
+
 #include <stdio.h>
 #define feetMile 5280
 #define metersMile 1609.34
@@ -56,27 +60,27 @@ int main(int argc, const char *argv[])
 */
     
 	///calc feet per second
-	printf("%f\n", calcFPS(first_min, first_sec));
+	printf("The first runner traveled at %f feet per second \n", calcFPS(first_min, first_sec));
 	///calc meters per second
-	printf("%f\n\n", calcMPS(first_min, first_sec));
+	printf("and ran at %f miles per hour.\n\n", calcMPS(first_min, first_sec));
     
     
 	///calc feet per second
-	printf("%f\n", calcFPS(second_min, second_sec));
+	printf("The second runner traveled at %f feet per second \n", calcFPS(second_min, second_sec));
 	///calc meters per second
-	printf("%f\n\n", calcMPS(second_min, second_sec));
+	printf("and ran at %f miles per hour.\n\n", calcMPS(second_min, second_sec));
 	
     
 	///calc feet per second
-	printf("%f\n", calcFPS(third_min, third_sec));
+	printf("The third runner traveled at %f feet per second \n", calcFPS(third_min, third_sec));
 	///calc meters per second
-	printf("%f\n\n", calcMPS(third_min, third_sec));
+	printf("and ran at %f miles per hour.\n\n", calcMPS(third_min, third_sec));
     
     
 	///calc feet per second
-	printf("%f\n", calcFPS(fourth_min, fourth_sec));
+	printf("The fourth runner traveled at %f feet per second \n", calcFPS(fourth_min, fourth_sec));
 	///calc meters per second
-	printf("%f\n\n", calcMPS(fourth_min, fourth_sec));
+	printf("and ran at %f miles per hour.\n\n", calcMPS(fourth_min, fourth_sec));
     
     
     // insert code here...
@@ -87,7 +91,7 @@ int main(int argc, const char *argv[])
 double calcFPS(int min, double sec)
 {
 	double fps = 0;
-
+    //15/22
 	//printf("%f\n", ((min * 60) + sec));
 	fps = feetMile/((min * 60) + sec);
 	//printf("%f", fps);
@@ -98,9 +102,12 @@ double calcMPS(int min, double sec)
 {
 	double mps = 0;
 
+	double fps = 0;
+    //15/22
 	//printf("%f\n", ((min * 60) + sec));
-	mps = metersMile/((min * 60) + sec);
-	//printf("%f", mps);
+	fps = feetMile/((min * 60) + sec);
+	mps = fps*(15.0/22.0);
+    //printf("%f", fps);
 	return mps;
 }
 
