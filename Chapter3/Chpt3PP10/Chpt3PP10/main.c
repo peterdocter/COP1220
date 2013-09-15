@@ -17,7 +17,14 @@ void calculate();
     
 int main(int argc, const char * argv[])
 {
-    calculate();
+    
+    
+    float q;
+    
+     q = f(3, 3, 4);     if f is defined as follows?            int            f(int q, int b, int c)           {                int p;                 p = q * b + 2 * c;                 return (p);           }
+    
+    
+    //calculate();
     return 0;
 }
 
@@ -37,7 +44,7 @@ void calculate(){
     // insert code here...
     //printf("Hello, World!\n");
     
-    
+    fabs(1);
     
     char yesOrNo[100];
 	printf("Would you like to calculate another? y/n ");
