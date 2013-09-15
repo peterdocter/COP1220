@@ -82,9 +82,6 @@ int main(int argc, const char *argv[])
 	///calc meters per second
 	printf("and ran at %f miles per hour.\n\n", calcMPS(fourth_min, fourth_sec));
     
-    
-    // insert code here...
-	//	printf("Hello, World!\n");
 	return 0;
 }
 
