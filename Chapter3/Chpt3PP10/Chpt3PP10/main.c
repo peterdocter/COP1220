@@ -17,34 +17,22 @@ void calculate();
     
 int main(int argc, const char * argv[])
 {
-    
-    
-    float q;
-    
-     q = f(3, 3, 4);     if f is defined as follows?            int            f(int q, int b, int c)           {                int p;                 p = q * b + 2 * c;                 return (p);           }
-    
-    
-    //calculate();
+    calculate();
     return 0;
 }
 
 
 void calculate(){
 
-     printf("Please enter a depth --> ");
+    printf("Please enter a depth --> ");
     float depth = 0;
     scanf("%f", &depth);
- 
     float celcius = celcius_at_depth(depth);
-    
     printf("It is %0.2f degrees Celcius at that depth.\n",celcius);
-    
-    
     printf("It is %0.2f degrees Fahernheit at that depth.",farenheit(celcius));
     // insert code here...
     //printf("Hello, World!\n");
     
-    fabs(1);
     
     char yesOrNo[100];
 	printf("Would you like to calculate another? y/n ");
@@ -58,25 +46,16 @@ void calculate(){
 	if (strncmp(yesOrNo, "n", 2) == 0) {
 		printf("Good bye!");
 	}
-
- 
-
 }
 
 float celcius_at_depth(float depth){
 
     float celcius = 10*depth+20;
-    
     return celcius;
-
 }
 
 float farenheit(float celcius){
     
     float farenheit = 1.8*celcius+32;
-    
-    
-    
     return farenheit;
-
 }
