@@ -116,33 +116,34 @@ void outputCharacterization(float n){
     
 };
 
+
 void outputLittleOrNoDamage(float n){
 
-    printf("Characterization - Little to no damage.\n");
+    printf("Characterization for %.1lf - Little to no damage.\n",n);
 
 }
 
 void outputSomeDamage(float n){
 
-    printf("Characterization - Some Damage\n");
+    printf("Characterization for %.1lf - Some Damage\n",n);
     
 }
 
 void outputSeriousDamage(float n){
 
-    printf("Characterization - Serious Damage: Walls may crack or fail\n");
+    printf("Characterization for %.1lf - Serious Damage: Walls may crack or fail\n",n);
     
 }
 
 void outputDisaster(float n){
 
-    printf("Characterization - Disaster: houses and buildings may collapse\n");
+    printf("Characterization for %.1lf - Disaster: houses and buildings may collapse\n",n);
     
 }
 
 void outputCatastrophy(float n){
 
-    printf("Characterization - Catastrophy: most bukldings destroyed\n");
+    printf("Characterization for %.1lf - Catastrophy: most bukldings destroyed\n",n);
     
 }
 
