@@ -149,7 +149,7 @@ void outputCatastrophy(float n){
 
 void outputSecondPart(){
 
-//The second part of the Programing Project answer
+//The second part of the Programming Project answer
     printf("In theory a programmer could program a switch to handle all possible Ricter scale numbers. I believe that it is much more prudent to use If/Then statements because it is easier to handle ranges of numbers. By using a statement like:\n\n 'if (n >= 5.0 && n < 5.5){ do someting here }' \n\na wide range of values are handled with much less coding.\n\n\n");
 
 }
