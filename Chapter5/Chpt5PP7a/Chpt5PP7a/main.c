@@ -44,7 +44,7 @@ int hot,pleasant,cold;
 int main(int argc, const char * argv[])
 {
     myMain();
-    runProgramAgain();
+    //    runProgramAgain();
     return 0;
 }
 
@@ -52,14 +52,14 @@ int main(int argc, const char * argv[])
 void myMain(){
 
     inputTemp();
-    calculateCategory(temp);
-
+    runProgramAgain();
 }
 
 void inputTemp(){
 
     printf("Please input a temperature --> ");
-    scanf("%fl",&temp);
+    scanf("%fl\n",&temp);
+    
     calculateCategory(temp);
     inputAnotherTemp();
     
@@ -81,7 +81,7 @@ void inputAnotherTemp(){
     
 	if (strncmp(yesOrNo, "n", 2) == 0) {
 		
-        printf("hot days - %i pleasant days - %i cold days %i\n",hot,pleasant,cold);
+        printf("\nThere were %i hot days.\nThere were %i pleasant days.\nThere were %i cold days.\n\n",hot,pleasant,cold);
         
     }
 
@@ -123,13 +123,13 @@ void runProgramAgain(){
         hot =0;
         pleasant = 0;
         cold = 0;
-        inputTemp();
+        myMain();
         
     }
     
 	if (strncmp(yesOrNo, "n", 2) == 0) {
 		
-        printf("Good Bye!");
+        printf("\nGood Bye!\n");
         
     }
 }
