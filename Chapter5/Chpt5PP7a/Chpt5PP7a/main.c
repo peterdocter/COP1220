@@ -30,7 +30,9 @@
 
 void myMain();
 void inputTemp();
-void calculateCategory();
+void calculateCategory(float);
+void inputAnotherTemp();
+void runProgramAgain();
 void printHotDays();
 void printPleasantDays();
 void printColdDays();
@@ -42,6 +44,7 @@ int hot,pleasant,cold;
 int main(int argc, const char * argv[])
 {
     myMain();
+    runProgramAgain();
     return 0;
 }
 
@@ -49,10 +52,7 @@ int main(int argc, const char * argv[])
 void myMain(){
 
     inputTemp();
-    calculateCategory();
-    printHotDays();
-    printPleasantDays();
-    printColdDays();
+    calculateCategory(temp);
 
 }
 
@@ -60,31 +60,76 @@ void inputTemp(){
 
     printf("Please input a temperature --> ");
     scanf("%fl",&temp);
+    calculateCategory(temp);
+    inputAnotherTemp();
     
+}
+
+
+void inputAnotherTemp(){
 
     char yesOrNo[100];
 	printf("Would you like to input another temperature? y/n ");
 	scanf("%s", yesOrNo);
     
 	if (strncmp(yesOrNo, "y", 2) == 0) {
+        
 		printf("\n");
 		inputTemp();
-	}
+        
+    }
     
 	if (strncmp(yesOrNo, "n", 2) == 0) {
 		
-        //printf("Good bye!");
-        
-        
+        printf("hot days - %i pleasant days - %i cold days %i\n",hot,pleasant,cold);
         
     }
 
     
+
 }
-void calculateCategory(){}
-void printHotDays(){}
-void printPleasantDays(){}
-void printColdDays(){}
 
+void calculateCategory(float c){
 
+    if (c>= HOT) {
+        
+        hot++;
+    
+    } else if(c>=PLEASANT){
+    
+        pleasant++;
+    
+    } else {cold++;}
+    
+    //printf("hot days - %i pleasant days - %i cold days %i\n",hot,pleasant,cold);
 
+}
+
+//void printHotDays(){}
+//void printPleasantDays(){}
+//void printColdDays(){}
+
+void runProgramAgain(){
+
+    char yesOrNo[100];
+	printf("Would you like to run the program again? y/n ");
+	scanf("%s", yesOrNo);
+    
+	if (strncmp(yesOrNo, "y", 2) == 0) {
+        
+		printf("\n");
+		
+        temp = 0;
+        hot =0;
+        pleasant = 0;
+        cold = 0;
+        inputTemp();
+        
+    }
+    
+	if (strncmp(yesOrNo, "n", 2) == 0) {
+		
+        printf("Good Bye!");
+        
+    }
+}
