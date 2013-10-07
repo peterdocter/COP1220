@@ -25,6 +25,7 @@ void myMain();
 void inputAnotherYear();
 float fast_food_billions(int);
 void outputPrediction(float);
+
 int main(int argc, const char * argv[])
 {
     myMain();
@@ -61,6 +62,12 @@ void inputAnotherYear()
         myMain();
 	}
     
-	if (strncmp(yesOrNo, "n", 2) == 0) {}
+	if (strncmp(yesOrNo, "n", 2) == 0) {
+    
+        
+        //
+        //
+        
+    }
     
 }
