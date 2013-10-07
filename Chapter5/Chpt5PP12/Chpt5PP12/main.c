@@ -16,7 +16,7 @@
 
 #include <stdio.h>
 #include <string.h>
-
+#define TWOTHOUSANDANDFIVE 2005
 float prediction;
 
 int year;
@@ -44,25 +44,47 @@ void myMain()
     //F(t) = 33.2 + 16.8t
 	prediction = fast_food_billions(year);
 	
+    if (year>=2005) {
+    
     outputPrediction(prediction);
-	inputAnotherYear();
+	
+    }else{
+    
+        printf("An input of a year prior to 2005 will not yield an answer.\n");
+        
+    }
+    
+    
+    inputAnotherYear();
 }
 
-void inputYear() {}
+void inputYear()
+{
+
+    printf("Please input a year after 2005 --> ");
+    scanf("%i",&year);
+
+}
 
 //F(t) = 33.2 + 16.8t
 float fast_food_billions(int t)
 {
-	return 33.2 + 16.8 * t;
+	return 33.2 + 16.8 * (t-TWOTHOUSANDANDFIVE);
 }
 
-void outputPrediction(float p) {}
+void outputPrediction(float p) {
+
+    printf("%.2lf\n",p);
+
+}
 
 void inputAnotherYear()
 {
+
+    //I could have prompted the user and 
 	char yesOrNo[100];
 
-	printf("Would you like to input another temperature? y/n ");
+	printf("Would you like to input another year? y/n ");
 	scanf("%s", yesOrNo);
 
 	if (strncmp(yesOrNo, "y", 2) == 0) {
@@ -71,6 +93,8 @@ void inputAnotherYear()
 	}
 
 	if (strncmp(yesOrNo, "n", 2) == 0) {
+        
+        printf("Thanks for using this program!\nGood Bye!\n");
 		//
 		//
 	}
