@@ -40,48 +40,40 @@ int main(int argc, const char *argv[])
 void myMain()
 {
 	inputYear();
-    
-    //F(t) = 33.2 + 16.8t
+
+	// F(t) = 33.2 + 16.8t
 	prediction = fast_food_billions(year);
-	
-    if (year>=2005) {
-    
-    outputPrediction(prediction);
-	
-    }else{
-    
-        printf("An input of a year prior to 2005 will not yield an answer.\n");
-        
-    }
-    
-    
-    inputAnotherYear();
+
+	if (year >= 2005) {
+		outputPrediction(prediction);
+	} else {
+		printf("An input of a year prior to 2005 will not yield an answer.\n");
+	}
+
+	inputAnotherYear();
 }
 
 void inputYear()
 {
-
-    printf("Please input a year after 2005 --> ");
-    scanf("%i",&year);
-
+	// I could have prompted the user  //Tell the user that entry of a year before 2005 will cause the program to stop.
+	printf("Please input a year after 2005 --> ");
+	scanf("%i", &year);
 }
 
-//F(t) = 33.2 + 16.8t
+// F(t) = 33.2 + 16.8t
 float fast_food_billions(int t)
 {
-	return 33.2 + 16.8 * (t-TWOTHOUSANDANDFIVE);
+	return 33.2 + 16.8 * (t - TWOTHOUSANDANDFIVE);
 }
 
-void outputPrediction(float p) {
-
-    printf("%.2lf\n",p);
-
+void outputPrediction(float p)
+{
+	printf("%.2lf\n", p);
 }
 
 void inputAnotherYear()
 {
-
-    //I could have prompted the user and 
+	// I could have prompted the user  //Tell the user that entry of a year before 2005 will cause the program to stop.
 	char yesOrNo[100];
 
 	printf("Would you like to input another year? y/n ");
@@ -93,8 +85,7 @@ void inputAnotherYear()
 	}
 
 	if (strncmp(yesOrNo, "n", 2) == 0) {
-        
-        printf("Thanks for using this program!\nGood Bye!\n");
+		printf("Thanks for using this program!\nGood Bye!\n");
 		//
 		//
 	}
