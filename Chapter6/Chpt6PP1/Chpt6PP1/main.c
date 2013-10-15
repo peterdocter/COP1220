@@ -17,12 +17,42 @@
  */
 #include <stdio.h>
 
+float amount;
+int fifties,twneties,tens,fives,ones;
+float cents;
+
+void inputAmount();
+void parseBills();
+
 void myMain();
 
 int main(int argc, const char * argv[])
 {
 
+    myMain();
     return 0;
 }
 
-void myMain(){}
+void myMain(){
+
+
+    // printf("PLease...");
+    //scanf("%f",&amount);
+    //printf("amount %f",amount);
+
+    inputAmount();
+    
+    
+}
+
+void inputAmount(){
+
+    
+    printf("Please enter amount to be parsed --> ");
+    scanf("%f",&amount);
+    printf("amount %.2f\n",amount);
+
+    
+
+
+}
