@@ -50,7 +50,7 @@ void myMain()
 
 void inputAmount()
 {
-	printf("Please enter amount to be parsed --> ");
+	printf("Please enter amount to be dispensed --> ");
 	scanf("%f", &amount);
 	// printf("amount %.2f\n",amount);
 
@@ -64,37 +64,37 @@ void parseBills(float a)
 
 	if (a / 50 >= 1) {
 		fifties = a / 50;
-		printf("fifties = %i\n", fifties);
+		//printf("fifties = %i\n", fifties);
 		a = a - (fifties * 50);
-		printf("%f\n", a);
+		//printf("%f\n", a);
 	}
     
     if (a / 20 >= 1) {
 		twenties = a / 20;
-		printf("twenties = %i\n", twenties);
+		//printf("twenties = %i\n", twenties);
 		a = a - (twenties * 20);
-		printf("%f\n", a);
+		//printf("%f\n", a);
 	}
     
     if (a / 10 >= 1) {
 		tens = a / 10;
-		printf("tens = %i\n", tens);
+		//printf("tens = %i\n", tens);
 		a = a - (tens * 10);
-		printf("%f\n", a);
+		//printf("%f\n", a);
 	}
     
     if (a / 5 >= 1) {
 		fives = a / 5;
-		printf("fives = %i\n", fives);
+		//printf("fives = %i\n", fives);
 		a = a - (fives * 5);
-		printf("%f\n", a);
+		//printf("%f\n", a);
 	}
 
     
     
     if (a / 1 >= 1) {
 		ones = a / 1;
-		printf("ones = %i\n", ones);
+		//printf("ones = %i\n", ones);
 		a = a - (ones * 1);
 		//printf("%f\n", a);
 	}
@@ -105,7 +105,6 @@ void parseBills(float a)
 void displayTotals(float a){
     //printf("%.2lf",a);
     
-    printf("$1%.2lf is dispensed in the following denominations:\n%i - Fifties\n%i - T2wenties\n%i - Tens\n%i - Fives\n%i - Ones\nand %.2lf cents\n",amount,fifties,twenties,tens,fives,ones,a);
+    printf("\n$1%.2lf is dispensed in the following denominations:\n%i - Fifties\n%i - Twenties\n%i - Tens\n%i - Fives\n%i - Ones\nand %.2lf cents\n",amount,fifties,twenties,tens,fives,ones,a);
     
-
 }
