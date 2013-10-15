@@ -23,7 +23,7 @@ float	cents;
 void inputAmount();
 
 void parseBills(float);
-
+void displayTotals(float);
 void myMain();
 
 int main(int argc, const char *argv[])
@@ -96,6 +96,16 @@ void parseBills(float a)
 		ones = a / 1;
 		printf("ones = %i\n", ones);
 		a = a - (ones * 1);
-		printf("%f\n", a);
+		//printf("%f\n", a);
 	}
+    
+    displayTotals(a);
+}
+
+void displayTotals(float a){
+    //printf("%.2lf",a);
+    
+    printf("$1%.2lf is dispensed in the following denominations:\n%i - Fifties\n%i - T2wenties\n%i - Tens\n%i - Fives\n%i - Ones\nand %.2lf cents\n",amount,fifties,twenties,tens,fives,ones,a);
+    
+
 }
