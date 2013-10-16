@@ -62,7 +62,6 @@ void myMain()
 	inputPaid();
 	calcDifference(amountDue, amountPaid);
 	calcChange(difference);
-	//displayChange(change);
 }
 
 void inputDue()
@@ -187,6 +186,6 @@ void calcChange(float a)
 void displayTotals(float a){
     //printf("%.2lf",a);
     
-    printf("\n$%.2lf is dispensed in the following denominations:\n%i - Fifties\n%i - Twenties\n%i - Tens\n%i - Fives\n%i - Ones\nand %.2lf cents\n",amount,*fiftyDollarBills,*twentyDollarBills,*tenDollarBills,*fiveDollarBills,*oneDollarBills,a);
+    printf("\n$%.2lf is dispensed in the following denominations:\n%i - Hundreds\n%i - Fifties\n%i - Twenties\n%i - Tens\n%i - Fives\n%i - Ones\n%.1i - Quarters\n%.1i - Dimes\n%.1i - Nickles\n%.1i.01 - Pennies\n",amount,*hundredDollarBills,*fiftyDollarBills,*twentyDollarBills,*tenDollarBills,*fiveDollarBills,*oneDollarBills,*quarterDollars,*tenthDollars,*twentiethDollars,*hundrethsDollars);
     
 }
