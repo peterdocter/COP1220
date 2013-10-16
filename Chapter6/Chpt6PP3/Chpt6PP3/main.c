@@ -33,7 +33,7 @@ void calcDifference(float d, float p);
 
 void calcChange(float a);
 
-void displayChange();
+void displayTotals(float);
 
 void myMain();
 
@@ -62,7 +62,7 @@ void myMain()
 	inputPaid();
 	calcDifference(amountDue, amountPaid);
 	calcChange(difference);
-	displayChange(change);
+	//displayChange(change);
 }
 
 void inputDue()
@@ -82,10 +82,10 @@ void calcDifference(float d, float p)
 	difference = d - p;
 
 	if (d < p) {
-		// printf("differnece = %.2lf",difference);
-		printf("differnece = %.2lf\n", fabs(difference));
-		difference = fabs(difference);
-		printf("differnece = %.2lf\n", fabs(difference));
+        
+		//convert to absolute value before sending to next function
+        difference = fabs(difference);
+		
 	} else {
 		// a bit of error checking
 		printf("Please reenter the amounts.\n");
@@ -141,7 +141,52 @@ void calcChange(float a)
 		printf("%f\n", a);
 	}
 
-	if (a / 1 < 1) {}
+	if (a / 1 < 1) {
+    
+    
+        printf("small change - %lf\n",a);
+        
+        if (a / .25 >= 1) {
+            *quarterDollars = a / .25;
+            printf("quarters = %i\n", quarters);
+            a = a - (*quarterDollars * .25);
+              printf("%f\n", a);
+        }
+    
+        if (a / .10 >= 1) {
+            *tenthDollars = a / .10;
+            printf("dimes = %i\n", dimes);
+            a = a - (*tenthDollars * .10);
+            printf("%f\n", a);
+        }
+        
+        if (a / .05 >= 1) {
+            *twentiethDollars = a / .05;
+            printf("nickels = %i\n", nickels);
+            a = a - (*twentiethDollars * .05);
+            printf("%f\n", a);
+        }
+
+        if (a / .01 >= 1) {
+            *hundrethsDollars = a / .01;
+            printf("pennies = %i\n", pennies);
+            a = a - (*hundrethsDollars * .01);
+            printf("%f\n", a);
+        }
+
+
+
+    
+    
+    }
+    
+    displayTotals(a);
+
 }
 
-void displayChange() {}
+void displayTotals(float a){
+    //printf("%.2lf",a);
+    
+    printf("\n$%.2lf is dispensed in the following denominations:\n%i - Fifties\n%i - Twenties\n%i - Tens\n%i - Fives\n%i - Ones\nand %.2lf cents\n",amount,*fiftyDollarBills,*twentyDollarBills,*tenDollarBills,*fiveDollarBills,*oneDollarBills,a);
+    
+}
