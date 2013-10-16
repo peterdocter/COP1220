@@ -20,6 +20,7 @@ float	amount;
 int		fifties, twenties, tens, fives, ones;
 float	cents;
 
+int *fiftyDollarBills,*twentyDollarBills,*tenDollarBills,*fiveDollarBills,*oneDollarBills;
 void inputAmount();
 
 void parseBills(float);
@@ -28,6 +29,15 @@ void myMain();
 
 int main(int argc, const char *argv[])
 {
+    
+    //pointer usage per chapter subject
+    //not really neccesary but...
+    fiftyDollarBills = &fifties;
+    twentyDollarBills = &twenties;
+    tenDollarBills   = &tens;
+    fiveDollarBills = &fives;
+    oneDollarBills = &ones;
+    
 	myMain();
 	return 0;
 }
@@ -63,39 +73,39 @@ void parseBills(float a)
 	// printf("%.2f\n",a);
 
 	if (a / 50 >= 1) {
-		fifties = a / 50;
+		*fiftyDollarBills = a / 50;
 		//printf("fifties = %i\n", fifties);
-		a = a - (fifties * 50);
+		a = a - (*fiftyDollarBills * 50);
 		//printf("%f\n", a);
 	}
     
     if (a / 20 >= 1) {
-		twenties = a / 20;
+		*twentyDollarBills = a / 20;
 		//printf("twenties = %i\n", twenties);
-		a = a - (twenties * 20);
+		a = a - (*twentyDollarBills * 20);
 		//printf("%f\n", a);
 	}
     
     if (a / 10 >= 1) {
-		tens = a / 10;
+		*tenDollarBills = a / 10;
 		//printf("tens = %i\n", tens);
-		a = a - (tens * 10);
+		a = a - (*tenDollarBills * 10);
 		//printf("%f\n", a);
 	}
     
     if (a / 5 >= 1) {
-		fives = a / 5;
+		*fiftyDollarBills = a / 5;
 		//printf("fives = %i\n", fives);
-		a = a - (fives * 5);
+		a = a - (*fiftyDollarBills * 5);
 		//printf("%f\n", a);
 	}
 
     
     
     if (a / 1 >= 1) {
-		ones = a / 1;
+		*oneDollarBills = a / 1;
 		//printf("ones = %i\n", ones);
-		a = a - (ones * 1);
+		a = a - (*oneDollarBills * 1);
 		//printf("%f\n", a);
 	}
     
@@ -105,6 +115,6 @@ void parseBills(float a)
 void displayTotals(float a){
     //printf("%.2lf",a);
     
-    printf("\n$1%.2lf is dispensed in the following denominations:\n%i - Fifties\n%i - Twenties\n%i - Tens\n%i - Fives\n%i - Ones\nand %.2lf cents\n",amount,fifties,twenties,tens,fives,ones,a);
+    printf("\n$%.2lf is dispensed in the following denominations:\n%i - Fifties\n%i - Twenties\n%i - Tens\n%i - Fives\n%i - Ones\nand %.2lf cents\n",amount,*fiftyDollarBills,*twentyDollarBills,*tenDollarBills,*fiveDollarBills,*oneDollarBills,a);
     
 }
