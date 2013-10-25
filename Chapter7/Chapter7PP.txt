@@ -1,0 +1,4 @@
+Ch 7
+1. Write a C program that lets a user enter up to 15 numbers (it will stop accepting numbers either because of a sentinel value or because it reaches the limit of 15 numbers). Display the entered numbers in reverse order (the opposite order in which they were entered).
+2. Write a C program that fills an array with 100 random* numbers between 0 and 1. Then, go through the array and count how many numbers are <0.5 and how many are >= 0.5. Display the contents of the array and the two count totals.
+* you can use the rand() function to do this.
