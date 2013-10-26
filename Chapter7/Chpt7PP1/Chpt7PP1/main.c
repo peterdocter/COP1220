@@ -13,6 +13,7 @@
 
 double array[15];
 void myMain();
+void printArray();
 
 int main(int argc, const char * argv[])
 {
@@ -21,14 +22,30 @@ int main(int argc, const char * argv[])
 }
 
 void myMain(){
-
+    
     for (int i=0; i<=14; i++) {
-        //
+
         printf("Let array[%i] in the array = ",i);
         scanf("%lf",&array[i]);
         
-    }
+        if (array[i] == -1) {
+            i=15;//force control
+            printArray();
+        }
+        
+    }//end for
     
+    printArray();
     
 }
 
+
+void printArray(){
+
+    for (int i=14; i>=0; i--) {
+    
+        printf("array[%i] = %lf\n",i,array[i]);
+    
+    }//end for
+
+}
