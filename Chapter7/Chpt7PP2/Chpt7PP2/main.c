@@ -19,9 +19,11 @@
 void myMain();
 void populateArray();
 float returnRand();
-float returnClockSquared();
+float returnClock();
 float array[100];
 int greaterThan05,lessThan05;
+void calcCountTotals();
+void displayCountTotals();
 
 int main(int argc, const char * argv[])
 {
@@ -32,16 +34,18 @@ int main(int argc, const char * argv[])
 void myMain(){
     
     populateArray();
-
+    calcCountTotals();
+    displayCountTotals();
+    
 }
 
 void populateArray(){
     
-    for (int i=0; i<=100; i++) {
+    for (int i=0; i<100; i++) {
         //we know this isn't true random
         //array[i]=rand();
         array[i]=returnRand();
-        printf("%lf\n",array[i]);
+        printf("value at %i = %lf\n",i,array[i]);
     }
 
 }
@@ -49,7 +53,7 @@ void populateArray(){
 
 float returnRand(){
     
-    double clock = returnClockSquared();
+    double clock = returnClock();
     clock = clock/10;
     int intpart = (int)clock;
     double decpart = clock - intpart;
@@ -58,8 +62,34 @@ float returnRand(){
 }
 
 
-float returnClockSquared(){
+float returnClock(){
     //wrapped in a function so if I wanted to manipulate the algorhythm differently it would be easier
-    float clockSquared = clock() * clock();
-    return clockSquared;
+    return clock();
 }
+
+
+void calcCountTotals(){
+
+    
+    for (int i=0; i< 100; i++) {
+        
+        if (array[i]< 0.5) {
+            
+            lessThan05++;
+            
+        } else {
+        
+            greaterThan05++;
+            
+        }
+    }
+
+
+}
+void displayCountTotals(){
+
+    printf("\n%i\n",greaterThan05);
+    printf("\n%i\n",lessThan05);
+
+}
+
