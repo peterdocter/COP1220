@@ -12,13 +12,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 #define SENTINEL = -1;
 
 void myMain();
 void populateArray();
 float returnRand();
-
+float returnClock();
 float array[100];
 int greaterThan05,lessThan05;
 
@@ -29,21 +30,12 @@ int main(int argc, const char * argv[])
 }
 
 void myMain(){
-
     
-    time_t timer;
-    
-    timer=time(NULL);
-    printf("The current time is %s.\n",asctime(localtime(&timer)));
-    clock_t uptime = clock() / (CLOCKS_PER_SEC / 1000);
-    printf("uptime = %lo",uptime);
     populateArray();
 
 }
 
 void populateArray(){
-    clock_t uptime = clock() / (CLOCKS_PER_SEC / 1000);
-    printf("uptime = %lo",uptime);
     
     for (int i=0; i<=100; i++) {
         //we know this isn't true random
@@ -55,19 +47,32 @@ void populateArray(){
 
 
 float returnRand(){
-    clock_t uptime = clock() / (CLOCKS_PER_SEC / 1000);
-    printf("uptime = %lo",uptime);
+    
+    //printf("clock() = %lf\n",returnClock());
+    //printf ( "fmod of clock() / clock() is %f\n", fmod (returnClock(),returnClock()) );
+    double clock = returnClock();
+    clock = clock/10;
+    int intpart = (int)clock;
+    double decpart = clock - intpart;
+    printf("\nclock = %f, myInteger = %d, myDecimal = %f\n", clock, intpart, decpart);
+    
+    
     float r=rand();
     if (r>1) {
-        //printf("%lf\n",r);
+        printf("62 - %lf\n",r);
         r=r/RAND_MAX;
-        //printf("%lf\n",r);
+        printf("64 - %lf\n",r);
     }
-    return r;
+    
+    if (r==0.000008){
+        returnRand();
+        //printf("69 - %lf\n",r);
+    }
+    return intpart;
 
 }
 
 
-
-
-
+float returnClock(){
+    return clock();
+}
