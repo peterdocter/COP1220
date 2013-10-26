@@ -14,8 +14,6 @@
 #include <time.h>
 #include <math.h>
 
-#define SENTINEL = -1;
-
 void myMain();
 void populateArray();
 float returnRand();
@@ -89,6 +87,8 @@ void displayCountTotals(){
 
     printf("\n %i values were greater than or equal to 0.5\n",greaterThan05);
     printf("\n %i values were less than 0.5\n\n",lessThan05);
+    
+    //The average values approach 50 and 50 when the program is run repeatedly which suggests a "standard distribution" between 0-1.
 
 }
 
