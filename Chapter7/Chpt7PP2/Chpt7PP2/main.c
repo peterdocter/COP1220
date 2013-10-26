@@ -45,7 +45,7 @@ void populateArray(){
         array[i]=returnRand();
         printf("Value at array[%i] = %0.1lf\n",i,array[i]);
     }
-
+    
 }
 
 
@@ -66,7 +66,7 @@ float returnClock(){
 
 
 void calcCountTotals(){
-
+    
     
     for (int i=0; i< 100; i++) {
         
@@ -75,16 +75,16 @@ void calcCountTotals(){
             lessThan05++;
             
         } else {
-        
+            
             greaterThan05++;
             
         }
     }
-
-
+    
+    
 }
 void displayCountTotals(){
-
+    
     printf("\n %i values were greater than or equal to 0.5\n",greaterThan05);
     printf("\n %i values were less than 0.5\n\n",lessThan05);
     
