@@ -19,7 +19,7 @@
 void myMain();
 void populateArray();
 float returnRand();
-float returnClock();
+float returnClockSquared();
 float array[100];
 int greaterThan05,lessThan05;
 
@@ -39,6 +39,7 @@ void populateArray(){
     
     for (int i=0; i<=100; i++) {
         //we know this isn't true random
+        //array[i]=rand();
         array[i]=returnRand();
         printf("%lf\n",array[i]);
     }
@@ -48,31 +49,17 @@ void populateArray(){
 
 float returnRand(){
     
-    //printf("clock() = %lf\n",returnClock());
-    //printf ( "fmod of clock() / clock() is %f\n", fmod (returnClock(),returnClock()) );
-    double clock = returnClock();
+    double clock = returnClockSquared();
     clock = clock/10;
     int intpart = (int)clock;
     double decpart = clock - intpart;
-    printf("\nclock = %f, myInteger = %d, myDecimal = %f\n", clock, intpart, decpart);
     
-    
-    float r=rand();
-    if (r>1) {
-        printf("62 - %lf\n",r);
-        r=r/RAND_MAX;
-        printf("64 - %lf\n",r);
-    }
-    
-    if (r==0.000008){
-        returnRand();
-        //printf("69 - %lf\n",r);
-    }
-    return intpart;
-
+    return decpart;
 }
 
 
-float returnClock(){
-    return clock();
+float returnClockSquared(){
+    //wrapped in a function so if I wanted to manipulate the algorhythm differently it would be easier
+    float clockSquared = clock() * clock();
+    return clockSquared;
 }
