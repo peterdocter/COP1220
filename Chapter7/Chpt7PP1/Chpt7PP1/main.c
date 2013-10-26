@@ -30,7 +30,7 @@ void myMain(){
         
         if (array[i] == -1) {
             i=15;//force control
-            printArray();
+            //printArray();
         }
         
     }//end for
