@@ -45,7 +45,7 @@ void populateArray(){
         //we know this isn't true random
         //array[i]=rand();
         array[i]=returnRand();
-        printf("value at %i = %lf\n",i,array[i]);
+        printf("Value at array[%i] = %0.1lf\n",i,array[i]);
     }
 
 }
@@ -88,8 +88,8 @@ void calcCountTotals(){
 }
 void displayCountTotals(){
 
-    printf("\n%i\n",greaterThan05);
-    printf("\n%i\n",lessThan05);
+    printf("\n %i values were greater than or equal to 0.5\n",greaterThan05);
+    printf("\n %i values were less than 0.5\n\n",lessThan05);
 
 }
 
