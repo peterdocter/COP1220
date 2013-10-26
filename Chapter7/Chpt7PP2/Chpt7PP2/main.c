@@ -63,7 +63,6 @@ float returnRand(){
 
 
 float returnClock(){
-    //wrapped in a function so if I wanted to manipulate the algorhythm differently it would be easier
     return clock();
 }
 
