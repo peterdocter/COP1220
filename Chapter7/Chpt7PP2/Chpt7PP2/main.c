@@ -88,7 +88,7 @@ void displayCountTotals(){
     printf("\n %i values were greater than or equal to 0.5\n",greaterThan05);
     printf("\n %i values were less than 0.5\n\n",lessThan05);
     
-    //The average values approach 50 and 50 when the program is run repeatedly which suggests a "standard distribution" between 0-1.
+    //The average values approach 50 and 50 when the program is run repeatedly which suggests a "standard distribution" between 0-1 with a bias toward "greater than 0.5" because 0.5 is included in the "greater than range".
 
     
     // https://raw.github.com/RandyMcMillan/COP1220/master/Chapter7/Chpt7PP2/Chpt7PP2/main.c
