@@ -90,5 +90,9 @@ void displayCountTotals(){
     
     //The average values approach 50 and 50 when the program is run repeatedly which suggests a "standard distribution" between 0-1.
 
+    
+    // https://raw.github.com/RandyMcMillan/COP1220/master/Chapter7/Chpt7PP2/Chpt7PP2/main.c
+    
+    
 }
 
