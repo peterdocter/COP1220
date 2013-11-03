@@ -5,8 +5,6 @@
 //  Created by Randy McMillan on 11/3/13.
 //  Copyright (c) 2013 Randy McMillan. All rights reserved.
 //
-
-
 /*
 
  1. Write and test a function deblank that takes a string output and a string input argument and returns a copy of the input argument with all blanks removed.
@@ -69,6 +67,7 @@ char deBlank(char *input,int loops){
     char *output = input;
     printf("\ninput = %s", input);
     printf("\noutput = %s\n", output);
+    printf("\nline = %s\n", line);
     return *output;
 
 }
