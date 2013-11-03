@@ -20,7 +20,7 @@ void myMain();
 
 void input();
 
-char beBlank(char input);
+char deBlank(char *input);
 
 char line[LINE];
 
@@ -35,6 +35,7 @@ int main(int argc, const char * argv[])
 void myMain(){
 
     input();
+    deBlank(scanline(line, LINE));
 
 }
 
@@ -43,8 +44,8 @@ void myMain(){
 void input(){
 
     printf("Please enter a line of text --> ");
-    printf("%s",scanline(line, LINE));
-    
+    //printf("%s",scanline(line, LINE));
+   
 }
 
 
@@ -58,16 +59,19 @@ char *scanline(char *dest,int dest_len){
     }
     dest[i]='\0';
     
-    /* Discards any characters that remain on input line */ while (ch != '\n' && ch != EOF)
-        ch = getchar();
+    /* Discards any characters that remain on input line */
+    while (ch != '\n' && ch != EOF)
+    ch = getchar();
     
     return dest;
 
 }
 
-char beBlank(char input){
-    char output = input;
-    return output;
+char deBlank(char *input){
+    char *output = input;
+    printf("\ninput = %s", input);
+    printf("\noutput = %s\n", output);
+    return *output;
 
 }
 
