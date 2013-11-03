@@ -15,7 +15,7 @@
 #define LINE 80
 
 void myMain();
-void input();
+void inPut();
 char deBlank(char *input,int loops);
 char line[LINE];
 char *scanLine(char *dest,int dest_len);
@@ -28,17 +28,18 @@ int main(int argc, const char * argv[])
 
 void myMain(){
 
-    input();
-    deBlank(scanLine(line, LINE),LINE);
-
+    inPut();
+    //deBlank(scanLine(line, LINE),LINE);
+    //printf("%c",deBlank(scanLine(line, LINE), LINE));
+    
 }
 
 
 
-void input(){
+void inPut(){
 
     printf("Please enter a line of text --> ");
-    //printf("%s",scanLine(line, LINE));
+    printf("%s",scanLine(line, LINE));
    
 }
 
