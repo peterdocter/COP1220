@@ -6,13 +6,40 @@
 //  Copyright (c) 2013 Randy McMillan. All rights reserved.
 //
 
+
+/*
+ 
+ 1.
+ Write and test a function deblank that takes a string output and a string input argument and returns a copy of the input argument with all blanks removed.
+ 
+ */
 #include <stdio.h>
+
+void myMain();
+
+void input();
+
+char beBlank(char input);
 
 int main(int argc, const char * argv[])
 {
-
-    // insert code here...
-    printf("Hello, World!\n");
+    myMain();
     return 0;
 }
+
+void myMain(){
+
+    
+
+}
+
+void input(){}
+
+char beBlank(char input){
+    char output = ' ';
+    return output;
+
+}
+
+
 
