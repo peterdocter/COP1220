@@ -20,6 +20,7 @@ void myMain();
 void inPut();
 char deBlank(char *input,int loops);
 char line[LINE];
+char target[LINE];
 char *scanLine(char *dest,int dest_len);
 
 int main(int argc, const char * argv[])
@@ -33,7 +34,17 @@ void myMain(){
     inPut();
     //deBlank(scanLine(line, LINE),LINE);
     //printf("%c",deBlank(scanLine(line, LINE), LINE));
-    deBlank(line, LINE);
+    //deBlank(line, LINE);
+    
+    printf("\n0 %s\n",&target[0]);
+    printf("1 %s\n",&target[1]);
+    printf("2 %s\n",&target[2]);
+    printf("3 %s\n",&target[3]);
+    printf("4 %s\n",&target[4]);
+    printf("5 %s\n",&target[5]);
+    printf("6 %s\n",&target[6]);
+    printf("7 %s\n",&target[7]);
+    printf("8 %s\n",&target[8]);
     
 }
 
@@ -43,7 +54,8 @@ void inPut(){
 
     printf("Please enter a line of text --> ");
     printf("%s\n",scanLine(line, LINE));
-   
+    
+  
 }
 
 //Based on Figure 8.15 in Book
@@ -55,10 +67,15 @@ char *scanLine(char *dest,int dest_len){
        
         dest[i++] = ch;
         if (!isspace(ch)) {
-        
-            printf("\n!isspace - %c\n",ch);
-        
+ 
+            
+            //printf("\n!isspace - %c\n",ch);
+            target[i] = ch;
+            
         }
+        
+        //dest[i++] = ch;
+
     
     }
     
@@ -70,6 +87,8 @@ char *scanLine(char *dest,int dest_len){
     
     return dest;
 }
+
+
 
 char deBlank(char *input,int loops){
 
