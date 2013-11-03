@@ -66,9 +66,9 @@ char *scanLine(char *dest,int dest_len){
 char deBlank(char *input,int loops){
 
     char *output = input;
-    printf("\ninput = %s", input);
-    printf("\noutput = %s\n", output);
-    printf("\nline = %s\n", line);
+    //printf("\ninput = %s", input);
+    //printf("\noutput = %s\n", output);
+    //printf("\nline = %s\n", line);
     return *output;
 
 }
