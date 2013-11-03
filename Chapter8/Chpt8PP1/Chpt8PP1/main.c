@@ -17,13 +17,9 @@
 #define LINE 80
 
 void myMain();
-
 void input();
-
 char deBlank(char *input,int loops);
-
 char line[LINE];
-
 char *scanLine(char *dest,int dest_len);
 
 int main(int argc, const char * argv[])
@@ -48,15 +44,17 @@ void input(){
    
 }
 
-
+//Based on Figure 8.15 in Book
 char *scanLine(char *dest,int dest_len){
 
     int i,ch;
     i=0;
     for (ch = getchar(); ch !='\n' && ch != EOF && i < dest_len -1; ch = getchar()) {
+        
         dest[i++] = ch;
         
     }
+    
     dest[i]='\0';
     
     /* Discards any characters that remain on input line */
@@ -64,16 +62,13 @@ char *scanLine(char *dest,int dest_len){
     ch = getchar();
     
     return dest;
-
 }
 
 char deBlank(char *input,int loops){
+
     char *output = input;
     printf("\ninput = %s", input);
     printf("\noutput = %s\n", output);
     return *output;
 
 }
-
-
-
