@@ -73,7 +73,7 @@ char deBlank(char *input,int loops){
     for (int i = 0; i <= loops; i++) {
         
         //printf("%i\n",i);
-        printf("\nline[i] = %s",&line[i]);
+        printf("\nline[%i] = %s",i,&line[i]);
         
     }
     //printf("\nline = %s\n", line);
