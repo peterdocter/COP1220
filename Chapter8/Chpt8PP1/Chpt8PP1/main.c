@@ -12,6 +12,8 @@
 */
 
 #include <stdio.h>
+#include <ctype.h>
+
 #define LINE 80
 
 void myMain();
@@ -31,7 +33,7 @@ void myMain(){
     inPut();
     //deBlank(scanLine(line, LINE),LINE);
     //printf("%c",deBlank(scanLine(line, LINE), LINE));
-    //deBlank(line, LINE);
+    deBlank(line, LINE);
     
 }
 
@@ -51,12 +53,16 @@ char *scanLine(char *dest,int dest_len){
     i=0;
     for (ch = getchar(); ch !='\n' && ch != EOF && i < dest_len -1; ch = getchar()) {
        
-        //printf("getchar() = %i",getchar());
         dest[i++] = ch;
+        if (!isspace(ch)) {
+        
+            printf("\n!isspace - %c\n",ch);
+        
+        }
     
     }
     
-    //dest[i]='\0';
+    dest[i]='\0';
     
     /* Discards any characters that remain on input line */
     while (ch != '\n' && ch != EOF)
@@ -68,13 +74,11 @@ char *scanLine(char *dest,int dest_len){
 char deBlank(char *input,int loops){
 
     char *output = input;
-    //printf("\ninput = %s", input);
-    //printf("\noutput = %s\n", output);
     
     for (int i = 0; i <= loops; i++) {
         
-        //printf("%i\n",i);
-        //printf("\nline[%i] = %s",i,&line[i]);
+        //printf("\n%i\n",i);
+        //printf("\nline[%i] = %s\n",i,&line[i]);
         
     }
     //printf("\nline = %s\n", line);
