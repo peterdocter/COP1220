@@ -31,6 +31,7 @@ void myMain(){
     inPut();
     //deBlank(scanLine(line, LINE),LINE);
     //printf("%c",deBlank(scanLine(line, LINE), LINE));
+    deBlank(line, LINE);
     
 }
 
@@ -68,6 +69,13 @@ char deBlank(char *input,int loops){
     char *output = input;
     //printf("\ninput = %s", input);
     //printf("\noutput = %s\n", output);
+    
+    for (int i = 0; i <= loops; i++) {
+        
+        //printf("%i\n",i);
+        printf("\nline[i] = %s",&line[i]);
+        
+    }
     //printf("\nline = %s\n", line);
     return *output;
 
