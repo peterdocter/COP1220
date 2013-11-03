@@ -20,11 +20,11 @@ void myMain();
 
 void input();
 
-char deBlank(char *input);
+char deBlank(char *input,int loops);
 
 char line[LINE];
 
-char *scanline(char *dest,int dest_len);
+char *scanLine(char *dest,int dest_len);
 
 int main(int argc, const char * argv[])
 {
@@ -35,7 +35,7 @@ int main(int argc, const char * argv[])
 void myMain(){
 
     input();
-    deBlank(scanline(line, LINE));
+    deBlank(scanLine(line, LINE),LINE);
 
 }
 
@@ -44,12 +44,12 @@ void myMain(){
 void input(){
 
     printf("Please enter a line of text --> ");
-    //printf("%s",scanline(line, LINE));
+    //printf("%s",scanLine(line, LINE));
    
 }
 
 
-char *scanline(char *dest,int dest_len){
+char *scanLine(char *dest,int dest_len){
 
     int i,ch;
     i=0;
@@ -67,7 +67,7 @@ char *scanline(char *dest,int dest_len){
 
 }
 
-char deBlank(char *input){
+char deBlank(char *input,int loops){
     char *output = input;
     printf("\ninput = %s", input);
     printf("\noutput = %s\n", output);
