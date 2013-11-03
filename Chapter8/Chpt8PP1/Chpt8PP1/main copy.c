@@ -31,7 +31,7 @@ void myMain(){
     inPut();
     //deBlank(scanLine(line, LINE),LINE);
     //printf("%c",deBlank(scanLine(line, LINE), LINE));
-    //deBlank(line, LINE);
+    deBlank(line, LINE);
     
 }
 
@@ -40,7 +40,7 @@ void myMain(){
 void inPut(){
 
     printf("Please enter a line of text --> ");
-    printf("%s\n",scanLine(line, LINE));
+    printf("- %s\n",scanLine(line, LINE));
    
 }
 
@@ -50,13 +50,12 @@ char *scanLine(char *dest,int dest_len){
     int i,ch;
     i=0;
     for (ch = getchar(); ch !='\n' && ch != EOF && i < dest_len -1; ch = getchar()) {
-       
-        //printf("getchar() = %i",getchar());
+        printf("getchar() = %i",getchar());
         dest[i++] = ch;
-    
+        
     }
     
-    //dest[i]='\0';
+    dest[i]='\0';
     
     /* Discards any characters that remain on input line */
     while (ch != '\n' && ch != EOF)
@@ -74,7 +73,7 @@ char deBlank(char *input,int loops){
     for (int i = 0; i <= loops; i++) {
         
         //printf("%i\n",i);
-        //printf("\nline[%i] = %s",i,&line[i]);
+        printf("\nline[%i] = %s",i,&line[i]);
         
     }
     //printf("\nline = %s\n", line);
