@@ -35,15 +35,16 @@ int main(int argc, const char *argv[])
 void myMain()
 {
     inPut();
-    deBlank(input,output,(int)strlen(input)+1);
-    //printf("%s",output);
+    //deBlank(input,output,(int)strlen(input)+1);
+    deBlank(scanLine(input, LINE),output,(int)strlen(input)+1);
+    printf("%s",output);
 }
 
 void inPut()
 {
     printf("Please enter a string to be deblanked --> ");
-    //gets(input);
-    printf("- %s\n",scanLine(input, LINE));
+    //gets(input);//avoid the warning
+    //printf("- %s\n",scanLine(input, LINE));
 }
 
 void deBlank(char *input,char *output, int loopLength ){
