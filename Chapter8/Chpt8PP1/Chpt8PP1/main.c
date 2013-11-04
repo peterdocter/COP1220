@@ -34,6 +34,7 @@ void myMain()
 {
     inPut();
     deBlank(input,output,(int)strlen(input));
+    printf("%s",output);
 }
 
 void inPut()
@@ -44,20 +45,16 @@ void inPut()
 
 void deBlank(char *input,char *output, int loopLength ){
 
-
+    int i=0, j=0;
+    int len = (int)strlen(input)+1;
     
-    for (int i =0; i<=loopLength;i++) {
-        //
-        
-        if (input[i]!= BLANK) {
-            //
-            
-            
-            
+    while (i != len) {
+        if (*(input+i) != ' '){
+            *(output+j) = *(input+i);
+            j++;
         }
-        
+        i++;
     }
-    
 
 
 }
