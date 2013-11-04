@@ -13,7 +13,7 @@
 
 #include <stdio.h>
 #include <ctype.h>
-
+#include <string.h>
 #define LINE 80
 
 void myMain();
@@ -32,19 +32,7 @@ int main(int argc, const char * argv[])
 void myMain(){
 
     inPut();
-    //deBlank(scanLine(line, LINE),LINE);
-    //printf("%c",deBlank(scanLine(line, LINE), LINE));
-    //deBlank(line, LINE);
-    
-    printf("\n0 %s\n",&target[0]);
-    printf("1 %s\n",&target[1]);
-    printf("2 %s\n",&target[2]);
-    printf("3 %s\n",&target[3]);
-    printf("4 %s\n",&target[4]);
-    printf("5 %s\n",&target[5]);
-    printf("6 %s\n",&target[6]);
-    printf("7 %s\n",&target[7]);
-    printf("8 %s\n",&target[8]);
+    deBlank(target, LINE);
     
 }
 
@@ -74,7 +62,7 @@ char *scanLine(char *dest,int dest_len){
             
         }
         
-        //dest[i++] = ch;
+        dest[i++] = ch;
 
     
     }
@@ -97,7 +85,14 @@ char deBlank(char *input,int loops){
     for (int i = 0; i <= loops; i++) {
         
         //printf("\n%i\n",i);
-        //printf("\nline[%i] = %s\n",i,&line[i]);
+        //printf("\ntarget[%i] = %s\n",i,&target[i]);
+        
+        //  	if (strncmp(&target[i], "y", 2) == 0) {
+        if (!strncmp(&target[i], "",1) == 0) {
+            //
+            //printf("true");
+            printf("%s",&target[i]);
+        }
         
     }
     //printf("\nline = %s\n", line);
