@@ -72,8 +72,8 @@ char *scanLine(char *dest, int dest_len)
 void deBlank(char *input, int loops)
 {
 	for (int i = 0; i <= loops; i++) {
-		if (!strncmp(&target[i], "", 1) == 0) {
-			printf("%s", &target[i]);
+		if (!strncmp(&input[i], "", 1) == 0) {
+			printf("%s", &input[i]);
 		}
 	}
 }
