@@ -66,7 +66,7 @@ char *scanLine(char *dest, int dest_len)
 {
 	int i, ch;
     
-	i = 0;
+	i = ZERO;
     
 	for (ch = getchar(); ch != '\n' && ch != EOF && i < dest_len - 1; ch = getchar()) {
 		dest[i++] = ch;
