@@ -26,6 +26,7 @@ void deBlank(char *input, int loops);
 char	line[LINE];
 char	target[LINE];
 char	*scanLine(char *dest, int dest_len);
+char stringCat[LINE];
 
 int main(int argc, const char *argv[])
 {
