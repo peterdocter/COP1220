@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define LINE 80
+#define ZERO 0
 #define BLANK ' '
 char input[LINE];
 char output[LINE];
@@ -45,14 +46,14 @@ void inPut()
 
 void deBlank(char *input,char *output, int loopLength ){
 
-    int i=0, j=0;
+    int i=ZERO, j=ZERO;
     
     while (i < loopLength) {
-        if (*(input+i) != ' '){
-            *(output+j) = *(input+i);
-            j++;
+        if (input[i] != BLANK) {
+            output[j]= input[i];
+            j++;//increment output index by one when true
         }
-        i++;
+        i++;//traverse array
     }
 
 
