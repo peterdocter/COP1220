@@ -23,7 +23,7 @@ char	output[LINE];
 
 void myMain();
 
-void inPut();
+void promptInput();
 
 void deBlank(char *input, char *output, int loopLength);
 
@@ -37,28 +37,29 @@ int main(int argc, const char *argv[])
 
 void myMain()
 {
-	inPut();
+	promptInput();
 	deBlank(scanLine(input, LINE), output, (int)strlen(input) + 1);
 	printf("%s", output);
 }
 
-void inPut()
+void promptInput()
 {
 	printf("Please enter a string to be deblanked --> ");
 }
 
 void deBlank(char *input, char *output, int loopLength)
 {
-	int i	= ZERO;
-	int j	= ZERO;
+    //mind my p's and q's
+	int p	= ZERO;
+	int q	= ZERO;
 
-	while (i < loopLength) {
-		if (input[i] != BLANK) {
-			output[j] = input[i];
-			j++;// increment output index by one when true
+	while (p < loopLength) {
+		if (input[p] != BLANK) {//if not blank
+			output[q] = input[p];
+			q++;// increment output index by one when true
 		}
 
-		i++;// traverse array
+		p++;// traverse array
 	}
 }
 
