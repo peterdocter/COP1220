@@ -47,7 +47,7 @@ void deBlank(char *input,char *output, int loopLength ){
 
     int i=0, j=0;
     
-    while (i != loopLength) {
+    while (i < loopLength) {
         if (*(input+i) != ' '){
             *(output+j) = *(input+i);
             j++;
