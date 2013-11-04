@@ -24,6 +24,7 @@ char output[LINE];
 void myMain();
 void inPut();
 void deBlank(char *input, char *output, int loopLength);
+char *scanLine(char *dest,int dest_len);
 
 int main(int argc, const char *argv[])
 {
@@ -35,18 +36,20 @@ void myMain()
 {
     inPut();
     deBlank(input,output,(int)strlen(input)+1);
-    printf("%s",output);
+    //printf("%s",output);
 }
 
 void inPut()
 {
     printf("Please enter a string to be deblanked --> ");
-    gets(input);
+    //gets(input);
+    printf("- %s\n",scanLine(input, LINE));
 }
 
 void deBlank(char *input,char *output, int loopLength ){
 
-    int i=ZERO, j=ZERO;
+    int i=ZERO;
+    int j=ZERO;
     
     while (i < loopLength) {
         if (input[i] != BLANK) {
@@ -58,3 +61,28 @@ void deBlank(char *input,char *output, int loopLength ){
 
 
 }
+
+
+//Based on Figure 8.15 in Book
+// Based on Figure 8.15 in Book
+char *scanLine(char *dest, int dest_len)
+{
+	int i, ch;
+    
+	i = 0;
+    
+	for (ch = getchar(); ch != '\n' && ch != EOF && i < dest_len - 1; ch = getchar()) {
+		dest[i++] = ch;
+        
+	}
+    
+	dest[i] = '\0';
+    
+	while (ch != '\n' && ch != EOF) {
+		ch = getchar();
+	}
+    
+	return dest;
+}
+
+
