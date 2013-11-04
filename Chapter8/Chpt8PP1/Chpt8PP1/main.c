@@ -16,12 +16,14 @@
 #include <stdlib.h>
 #include <string.h>
 #define LINE 80
+#define BLANK ' '
 char input[LINE];
 char output[LINE];
 
 void myMain();
 void inPut();
-void deBlank(char *input, char *output);
+void deBlank(char *input, char *output, int loopLength);
+
 int main(int argc, const char *argv[])
 {
 	myMain();
@@ -31,7 +33,7 @@ int main(int argc, const char *argv[])
 void myMain()
 {
     inPut();
-    deBlank(input,output);
+    deBlank(input,output,(int)strlen(input));
 }
 
 void inPut()
@@ -40,4 +42,22 @@ void inPut()
     gets(input);
 }
 
-void deBlank(char *input,char *output){}
+void deBlank(char *input,char *output, int loopLength ){
+
+
+    
+    for (int i =0; i<=loopLength;i++) {
+        //
+        
+        if (input[i]!= BLANK) {
+            //
+            
+            
+            
+        }
+        
+    }
+    
+
+
+}
