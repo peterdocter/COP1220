@@ -33,7 +33,7 @@ int main(int argc, const char *argv[])
 void myMain()
 {
     inPut();
-    deBlank(input,output,(int)strlen(input));
+    deBlank(input,output,(int)strlen(input)+1);
     printf("%s",output);
 }
 
@@ -46,9 +46,8 @@ void inPut()
 void deBlank(char *input,char *output, int loopLength ){
 
     int i=0, j=0;
-    int len = (int)strlen(input)+1;
     
-    while (i != len) {
+    while (i != loopLength) {
         if (*(input+i) != ' '){
             *(output+j) = *(input+i);
             j++;
