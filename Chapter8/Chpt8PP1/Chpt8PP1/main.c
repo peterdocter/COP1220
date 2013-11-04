@@ -35,7 +35,6 @@ int main(int argc, const char *argv[])
 void myMain()
 {
     inPut();
-    //deBlank(input,output,(int)strlen(input)+1);
     deBlank(scanLine(input, LINE),output,(int)strlen(input)+1);
     printf("%s",output);
 }
@@ -43,8 +42,6 @@ void myMain()
 void inPut()
 {
     printf("Please enter a string to be deblanked --> ");
-    //gets(input);//avoid the warning
-    //printf("- %s\n",scanLine(input, LINE));
 }
 
 void deBlank(char *input,char *output, int loopLength ){
@@ -64,7 +61,6 @@ void deBlank(char *input,char *output, int loopLength ){
 }
 
 
-//Based on Figure 8.15 in Book
 // Based on Figure 8.15 in Book
 char *scanLine(char *dest, int dest_len)
 {
