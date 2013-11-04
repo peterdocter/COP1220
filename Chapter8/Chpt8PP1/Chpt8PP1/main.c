@@ -13,21 +13,15 @@
  */
 
 #include <stdio.h>
-#include <ctype.h>
+#include <stdlib.h>
 #include <string.h>
 #define LINE 80
+char input[LINE];
+char output[LINE];
 
 void myMain();
-
 void inPut();
-
-void deBlank(char *input, int loops);
-
-char	line[LINE];
-char	target[LINE];
-char	*scanLine(char *dest, int dest_len);
-char stringCat[LINE];
-
+void deBlank(char *input, char *output);
 int main(int argc, const char *argv[])
 {
 	myMain();
@@ -36,45 +30,14 @@ int main(int argc, const char *argv[])
 
 void myMain()
 {
-	inPut();
-	deBlank(target, LINE);
+    inPut();
+    deBlank(input,output);
 }
 
 void inPut()
 {
-	printf("Please enter a line of text --> ");
-	scanLine(line, LINE);
+    printf("Please enter a string to be deblanked --> ");
+    gets(input);
 }
 
-// Based on Figure 8.15 in Book
-char *scanLine(char *dest, int dest_len)
-{
-	int i, ch;
-
-	i = 0;
-
-	for (ch = getchar(); ch != '\n' && ch != EOF && i < dest_len - 1; ch = getchar()) {
-		dest[i++] = ch;
-
-		if (!isspace(ch)) {
-			target[i] = ch;
-		}
-	}
-
-	dest[i] = '\0';
-
-	while (ch != '\n' && ch != EOF) {
-		ch = getchar();
-	}
-
-	return dest;
-}
-
-void deBlank(char *input, int loops)
-{
-	for (int i = 0; i <= loops; i++) {
-		if (!strncmp(&input[i], "", 1) == 0) {
-			printf("%s", &input[i]);
-		}
-	}
-}
+void deBlank(char *input,char *output){}
