@@ -23,12 +23,51 @@
  */
 
 #include <stdio.h>
+#define ZERO 0
+#define LINE 80
+
+void myMain();
+void promptInput();
+char *scanLine(char *dest, int dest_len);
+char string[LINE];
 
 int main(int argc, const char * argv[])
 {
-
-    // insert code here...
-    printf("Hello, World!\n");
+    myMain();
     return 0;
 }
+
+void myMain(){
+    promptInput();
+    scanLine(string, LINE);
+    
+    
+    
+}
+
+void promptInput()
+{
+	printf("Please enter a string to be deblanked --> ");
+}
+
+// Based on Figure 8.15 in Book
+char *scanLine(char *dest, int dest_len)
+{
+	int i, ch;
+    
+	i = ZERO;
+    
+	for (ch = getchar(); ch != '\n' && ch != EOF && i < dest_len - 1; ch = getchar()) {
+		dest[i++] = ch;
+	}
+    
+	dest[i] = '\0';
+    
+	while (ch != '\n' && ch != EOF) {
+		ch = getchar();
+	}
+    
+	return dest;
+}
+
 
