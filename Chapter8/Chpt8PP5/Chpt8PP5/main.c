@@ -39,8 +39,16 @@ int main(int argc, const char * argv[])
 
 void myMain(){
     promptInput();
+    
     scanLine(string, LINE);
     
+printf("%lu\n",strlen(string));
+ 
+    
+    //for (int i = 0; i< strlen(string[0]); i++) {
+        //
+        //}
+        //printf("%c",string[0]);
     
     
 }
