@@ -45,9 +45,10 @@ void myMain(){
 printf("%lu\n",strlen(string));
  
     
-    //for (int i = 0; i< strlen(string[0]); i++) {
-        //
-        //}
+    for (int i = strlen(string); i<=strlen(string); i--) {
+        printf("%i",i);
+        
+    }
         //printf("%c",string[0]);
     
     
