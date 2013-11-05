@@ -25,6 +25,12 @@
 #include <stdio.h>
 #define ZERO	0
 #define LINE	80
+#define Y 'y'
+#define S 's'
+#define SH 'sh'
+#define CH 'ch'
+#define ES 'es'
+
 
 void myMain();
 
@@ -48,16 +54,41 @@ void myMain()
 	promptInput();
 	scanLine(string, LINE);
     strncpy(modified, string,(size_t)strlen(string));
-    strncpy(modified, modified, 1);
+    //strncpy(modified, modified, 1);
 
+    
+    //printf("%s",strrchr (modified, 'sl'));
+
+    if (strrchr(modified, Y)) {
+        printf("y");
+    }
+    
+    if (strrchr(modified, S)) {
+        printf("s");
+    }
+    
+    if (strrchr(modified, CH)) {
+        printf("ch");
+    }
+    
+    if (strrchr(modified, SH)) {
+        printf("sh");
+    }
+    
+    if (strrchr(modified, ES)) {
+        printf("es");
+    }
+    
     //printf("%s",&modified[0]);
 	//printf("%lu\n", strlen(string));
     //for (int i = strlen(modified); i <= strlen(modified); i--) {
         	//printf("%i", i);
             
-            printf("%s",strrchr (modified, 'sl'));
+    //         printf("%s",strrchr (modified, 'sl'));
             //=> "ld"
             //  }
+
+
 }
 
 void promptInput()
