@@ -47,16 +47,17 @@ void myMain()
 {
 	promptInput();
 	scanLine(string, LINE);
-    
-    
-    strncpy(modified, string, 10);
+    strncpy(modified, string,(size_t)strlen(string));
+    strncpy(modified, modified, 1);
 
-    
-    printf("%s",&modified[0]);
+    //printf("%s",&modified[0]);
 	//printf("%lu\n", strlen(string));
-    //	for (int i = strlen(string); i <= strlen(string); i--) {
-        //	printf("%i", i);
-        //}
+    //for (int i = strlen(modified); i <= strlen(modified); i--) {
+        	//printf("%i", i);
+            
+            printf("%s",strrchr (modified, 'sl'));
+            //=> "ld"
+            //  }
 }
 
 void promptInput()
