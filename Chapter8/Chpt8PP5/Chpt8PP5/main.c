@@ -91,8 +91,7 @@ char pluralize(char string[LINE])
 	int		done	= 0;
 
 	while (done != 1) {
-		
-        // printf("before - %s",string);
+		// printf("before - %s",string);
 		if (!strncmp(reverse_string(string), "s", 1)) {
 			reverse_string(string);
 			// string[strlen(string)-1] = 0;
@@ -100,19 +99,16 @@ char pluralize(char string[LINE])
 			printf("%s\n", string);
 			done = 1;
 		}
-        
-        		reverse_string(string);
 
-        if (!strncmp(reverse_string(string), "y", 1)) {
+		reverse_string(string);
+
+		if (!strncmp(reverse_string(string), "y", 1)) {
 			reverse_string(string);
 			string[strlen(string) - 1] = 0;
 			strcat(string, "ies");
 			printf("%s\n", string);
 			done = 1;
 		}
-
-
-		
 
 		reverse_string(string);
 
@@ -136,16 +132,16 @@ char pluralize(char string[LINE])
 			done = 1;
 		}
 
-		//reverse_string(string);
+		// reverse_string(string);
 
 		// printf("before - %s",string);
-		//if (strncmp(reverse_string(string), "s", 1)) {
+		 if (strncmp(reverse_string(string), "s", 1)) {
 		//	reverse_string(string);
 		//	// string[strlen(string)-1] = 0;
-		//	strcat(string, "s");
-		//	printf("%s\n", string);
-		//	done = 1;
-		//}
+			strcat(string, "s");
+			printf("%s\n", string);
+			done = 1;
+		 }
 	}
 
 	return plural;
