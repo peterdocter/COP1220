@@ -13,9 +13,6 @@
  *   a. If noun ends in “y”, remove the “y” and add “ies”.
  *   b. If noun ends in “s”, “ch”, or “sh”, add “es”.
  *   c. In all other cases, just add “s”.
- *   to quit => 6
- *   to quit => 12 to quit => 0
- *   to quit => -1
  *   Print each noun and its plural. Try the following data:
  *   chair dairy boss circus fly dog church clue dish
  *
@@ -57,9 +54,7 @@ void myMain()
 	scanLine(string, LINE);
 	strncpy(modified, string, (size_t)strlen(string));
 	// strncpy(modified, modified, 1);
-    //reverse_string(string);
-	//pluralize(modified);
-   	printf("%c", pluralize(modified));
+	printf("%c", pluralize(modified));
 }
 
 void promptInput()
@@ -93,9 +88,18 @@ char pluralize(char string[LINE])
 	int		done	= 0;
 
 	while (done != 1) {
-		
-        printf("before - %s",string);
-        if (!strncmp(reverse_string(string), "y", 1)) {
+		// printf("before - %s",string);
+		if (!strncmp(reverse_string(string), "s", 1)) {
+			reverse_string(string);
+			// string[strlen(string)-1] = 0;
+			strcat(string, "es");
+			printf("%s\n", string);
+			done = 1;
+		}
+
+		reverse_string(string);
+
+		if (!strncmp(reverse_string(string), "y", 1)) {
 			reverse_string(string);
 			string[strlen(string) - 1] = 0;
 			strcat(string, "ies");
@@ -105,10 +109,10 @@ char pluralize(char string[LINE])
 
 		reverse_string(string);
 
-		printf("before - %s",string);
-		if (!strncmp(reverse_string(string), "s", 1)) {
+		// printf("before - %s",string);
+		if (!strncmp(reverse_string(string), "hc", 2)) {
 			reverse_string(string);
-			string[strlen(string)-1] = 0;
+			// string[strlen(string)-1] = 0;
 			strcat(string, "es");
 			printf("%s\n", string);
 			done = 1;
@@ -116,41 +120,25 @@ char pluralize(char string[LINE])
 
 		reverse_string(string);
 
-		printf("before - %s",string);
-		if (!strncmp(reverse_string(string), "hc", 2)) {
-			reverse_string(string);
-			string[strlen(string)-1] = 0;
-			strcat(string, "es");
-			printf("%s\n", string);
-			done = 1;
-		
-        }
-
-		reverse_string(string);
-
-		printf("before - %s",string);
+		// printf("before - %s",string);
 		if (!strncmp(reverse_string(string), "hs", 2)) {
 			reverse_string(string);
-			string[strlen(string)-1] = 0;
+			// string[strlen(string)-1] = 0;
 			strcat(string, "es");
 			printf("%s\n", string);
 			done = 1;
-		
-        } else {
+		}
 
-		reverse_string(string);
+		// reverse_string(string);
 
-            printf("before - %s",string);
-		if (strncmp(reverse_string(string), "s", 1)) {
-			reverse_string(string);
-            string[strlen(string)-1] = 0;
-            	strcat(string, "s");
+		// printf("before - %s",string);
+        if (strncmp(reverse_string(string), "s", 1)) {
+			//reverse_string(string);
+            //string[strlen(string)-1] = 0;
+			strcat(string, "s");
 			printf("%s\n", string);
 			done = 1;
-            
-        }
-        
-        }
+		 }
 	}
 
 	return plural;
