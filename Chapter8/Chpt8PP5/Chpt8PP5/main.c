@@ -32,17 +32,18 @@ void promptInput();
 
 char *scanLine(char *dest, int dest_len);
 
-char string[LINE];
-char modified[LINE];
+char	string[LINE];
+char	modified[LINE];
 
 char pluralize(char string[LINE]);
-char* reverse_string(char *str);
 
-#define Y "y"
-#define S "s"
-//reversed for logic in
-#define HS "hs"
-#define HC "hc"
+char *reverse_string(char *str);
+
+#define Y	"y"
+#define S	"s"
+// reversed for logic in pluralize()
+#define HS	"hs"
+#define HC	"hc"
 
 int main(int argc, const char *argv[])
 {
@@ -54,10 +55,9 @@ void myMain()
 {
 	promptInput();
 	scanLine(string, LINE);
-    strncpy(modified, string,(size_t)strlen(string));
-    //strncpy(modified, modified, 1);
-    printf("%c",pluralize(modified));
-
+	strncpy(modified, string, (size_t)strlen(string));
+	// strncpy(modified, modified, 1);
+	printf("%c", pluralize(modified));
 }
 
 void promptInput()
@@ -88,49 +88,53 @@ char *scanLine(char *dest, int dest_len)
 char pluralize(char string[LINE])
 {
 	char plural = ' ';
-    //printf("%s",reverse_string(string));
-    
-    //    int strncmp(const char *str1, const char *str2, size_t n);
 
-    if (!strncmp(reverse_string(string),Y,1)) {
+	if (!strncmp(reverse_string(string), Y, 1)) {
+		//printf("y - add ies");
+        reverse_string(string);
         
-    
-    //    if (strrchr(reverse_string(string), Y)) {
-        printf("y - add ies");
-    }
-    
-    if (!strncmp(reverse_string(string), HC,2) || !strncmp(reverse_string(string), HS,2) || !strncmp(reverse_string(string), S,1)) {
+        printf("%lu",strlen(string)-1);
+        //strncat(string, "sss", strlen(string)-0);
+        string[strlen(string)-1] = 0; /* 'P' is not in `p` (and it isn't in `mystr` either) */
+
+        strncpy(string,string,strlen(string)-1);
+        //printf("%s",string);
+
+        strcat(string,"ies");
+        printf("%s",string);
+
+        //char *strcpy(char *str1, const char *str2);
+
         
-        printf("s -  add es\n");
-        printf("ch - add es\n");
-        printf("sh - add es\n");
-    }
-    
+	}
+
+	if (!strncmp(reverse_string(string), HC, 2) || !strncmp(reverse_string(string), HS, 2) || !strncmp(reverse_string(string), S, 1)) {
+		//printf("s -  add es\n");
+		//printf("ch - add es\n");
+		//printf("sh - add es\n");
+	}
+
 	return plural;
 }
 
-
-
+///common reverse string technique
 char *reverse_string(char *str)
 {
-    char temp;
-    size_t len = strlen(str) - 1;
-    size_t i;
-    size_t k = len;
-    
-    for(i = 0; i < len; i++)
-    {
-        temp = str[k];
-        str[k] = str[i];
-        str[i] = temp;
-        k--;
-        
-	    /* As 2 characters are changing place for each cycle of the loop
-         only traverse half the array of characters */
-	    if(k == (len / 2))
-	    {
-	   	    break;
-	    }
-    }
-    return str;
+	char	temp;
+	size_t	len = strlen(str) - 1;
+	size_t	i;
+	size_t	k = len;
+
+	for (i = 0; i < len; i++) {
+		temp	= str[k];
+		str[k]	= str[i];
+		str[i]	= temp;
+		k--;
+
+		if (k == (len / 2)) {
+			break;
+		}
+	}
+
+	return str;
 }
