@@ -58,8 +58,8 @@ void myMain()
 	strncpy(modified, string, (size_t)strlen(string));
 	// strncpy(modified, modified, 1);
     //reverse_string(string);
-	pluralize(modified);
-   	//printf("%c", pluralize(modified));
+	//pluralize(modified);
+   	printf("%c", pluralize(modified));
 }
 
 void promptInput()
@@ -94,6 +94,7 @@ char pluralize(char string[LINE])
 
 	while (done != 1) {
 		
+        printf("before - %s",string);
         if (!strncmp(reverse_string(string), "y", 1)) {
 			reverse_string(string);
 			string[strlen(string) - 1] = 0;
