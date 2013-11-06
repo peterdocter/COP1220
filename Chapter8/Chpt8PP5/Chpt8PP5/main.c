@@ -88,21 +88,19 @@ char *scanLine(char *dest, int dest_len)
 char pluralize(char string[LINE])
 {
 	char plural = ' ';
-
+    int done = 0;
+    while (done != 1) {
+        
+    
 	if (!strncmp(reverse_string(string),"y", 1)) {
         reverse_string(string);
         string[strlen(string)-1] = 0;
         strcat(string,"ies");
         printf("%s\n",string);
-        
+        done = 1;
 	}
 
-    if (strncmp(reverse_string(string), "s", 1)) {
-
-        strcat(string,"s");
-        printf("%s\n",string);
-        
-    } else {
+  
 
        
     reverse_string(string);
@@ -112,6 +110,8 @@ char pluralize(char string[LINE])
         //string[strlen(string)-1] = 0;
         strcat(string,"es");
         printf("%s\n",string);
+        done = 1;
+
         
 	}
     
@@ -122,6 +122,8 @@ char pluralize(char string[LINE])
         //string[strlen(string)-1] = 0;
         strcat(string,"es");
         printf("%s\n",string);
+        done = 1;
+
         
 	}
 
@@ -132,11 +134,13 @@ char pluralize(char string[LINE])
         //string[strlen(string)-1] = 0;
         strcat(string,"es");
         printf("%s\n",string);
+        done = 1;
+
         
 	}
     
-    }
     
+    }
     
 	return plural;
 }
