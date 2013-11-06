@@ -13,9 +13,6 @@
  *   a. If noun ends in “y”, remove the “y” and add “ies”.
  *   b. If noun ends in “s”, “ch”, or “sh”, add “es”.
  *   c. In all other cases, just add “s”.
- *   to quit => 6
- *   to quit => 12 to quit => 0
- *   to quit => -1
  *   Print each noun and its plural. Try the following data:
  *   chair dairy boss circus fly dog church clue dish
  *
@@ -135,9 +132,9 @@ char pluralize(char string[LINE])
 		// reverse_string(string);
 
 		// printf("before - %s",string);
-		 if (strncmp(reverse_string(string), "s", 1)) {
-		//	reverse_string(string);
-		//	// string[strlen(string)-1] = 0;
+        if (strncmp(reverse_string(string), "s", 1)) {
+			//reverse_string(string);
+            //string[strlen(string)-1] = 0;
 			strcat(string, "s");
 			printf("%s\n", string);
 			done = 1;

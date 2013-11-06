@@ -49,14 +49,14 @@ void promptInput()
 
 void deBlank(char *input, char *output, int loopLength)
 {
-    //mind my p's and q's
+	// mind my p's and q's
 	int p	= ZERO;
 	int q	= ZERO;
 
 	while (p < loopLength) {
-		if (input[p] != BLANK) {//if not blank
+		if (input[p] != BLANK) {	// if not blank
 			output[q] = input[p];
-			q++;// increment output index by one when true
+			q++;					// increment output index by one when true
 		}
 
 		p++;// traverse array
