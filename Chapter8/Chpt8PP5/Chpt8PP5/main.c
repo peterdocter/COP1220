@@ -93,14 +93,14 @@ char pluralize(char string[LINE])
     
     //    int strncmp(const char *str1, const char *str2, size_t n);
 
-    if (!strncmp(string,Y,1)) {
+    if (!strncmp(reverse_string(string),Y,1)) {
         
     
     //    if (strrchr(reverse_string(string), Y)) {
         printf("y - add ies");
     }
     
-    if (strrchr(reverse_string(string), CH)||strrchr(reverse_string(string), SH)||strrchr(reverse_string(string), S)) {
+    if (!strncmp(reverse_string(string), CH,2) || !strncmp(reverse_string(string), SH,2) || !strncmp(reverse_string(string), S,1)) {
         
         printf("s -  add es\n");
         printf("ch - add es\n");
