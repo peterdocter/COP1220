@@ -29,7 +29,6 @@
 #define S 's'
 #define SH 'sh'
 #define CH 'ch'
-#define ES 'es'
 
 
 void myMain();
@@ -41,7 +40,7 @@ char *scanLine(char *dest, int dest_len);
 char string[LINE];
 char modified[LINE];
 
-char pluralize(char string);
+char pluralize(char string[LINE]);
 
 int main(int argc, const char *argv[])
 {
@@ -55,29 +54,26 @@ void myMain()
 	scanLine(string, LINE);
     strncpy(modified, string,(size_t)strlen(string));
     //strncpy(modified, modified, 1);
-
+    printf("%c",pluralize(modified));
     
     //printf("%s",strrchr (modified, 'sl'));
 
     if (strrchr(modified, Y)) {
-        printf("y");
+        //printf("y - add ies");
     }
     
     if (strrchr(modified, S)) {
-        printf("s");
+        //printf("s -  add es\n");
     }
     
     if (strrchr(modified, CH)) {
-        printf("ch");
+        //printf("ch - add es\n");
     }
     
     if (strrchr(modified, SH)) {
-        printf("sh");
+        //rprintf("sh - add es\n");
     }
     
-    if (strrchr(modified, ES)) {
-        printf("es");
-    }
     
     //printf("%s",&modified[0]);
 	//printf("%lu\n", strlen(string));
@@ -116,9 +112,29 @@ char *scanLine(char *dest, int dest_len)
 	return dest;
 }
 
-char pluralize(char string)
+char pluralize(char string[LINE])
 {
 	char plural = ' ';
 
+    
+    
+    if (strrchr(string, Y)) {
+        printf("y - add ies");
+    }
+    
+    if (strrchr(string, S)) {
+        printf("s -  add es\n");
+    }
+    
+    if (strrchr(string, CH)) {
+        printf("ch - add es\n");
+    }
+    
+    if (strrchr(string, SH)) {
+        printf("sh - add es\n");
+    }
+    
+    
+    
 	return plural;
 }
