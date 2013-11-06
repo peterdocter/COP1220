@@ -62,7 +62,7 @@ void myMain()
 
 void promptInput()
 {
-	printf("Please enter a string to be deblanked --> ");
+	printf("Please enter a NOUN to be pluralized --> ");
 }
 
 // Based on Figure 8.15 in Book
@@ -96,7 +96,25 @@ char pluralize(char string[LINE])
         printf("%s\n",string);
         
 	}
- 
+
+    if (strncmp(reverse_string(string), "s", 1)) {
+
+        strcat(string,"s");
+        printf("%s\n",string);
+        
+    } else {
+
+       
+    reverse_string(string);
+    //printf("before - %s",string);
+    if (!strncmp(reverse_string(string), "s", 1)) {
+        reverse_string(string);
+        //string[strlen(string)-1] = 0;
+        strcat(string,"es");
+        printf("%s\n",string);
+        
+	}
+    
     reverse_string(string);
     //printf("before - %s",string);
     if (!strncmp(reverse_string(string), "hc", 2)) {
@@ -107,7 +125,17 @@ char pluralize(char string[LINE])
         
 	}
 
+    reverse_string(string);
+    //printf("before - %s",string);
+    if (!strncmp(reverse_string(string), "hs", 2)) {
+        reverse_string(string);
+        //string[strlen(string)-1] = 0;
+        strcat(string,"es");
+        printf("%s\n",string);
+        
+	}
     
+    }
     
     
 	return plural;
