@@ -26,13 +26,6 @@
 #define ZERO	0
 #define LINE	80
 
-#define Y "y"
-
-#define S "s"
-#define SH "sh"
-#define CH "ch"
-
-
 void myMain();
 
 void promptInput();
@@ -44,6 +37,12 @@ char modified[LINE];
 
 char pluralize(char string[LINE]);
 char* reverse_string(char *str);
+
+#define Y "y"
+#define S "s"
+//reversed for logic in
+#define HS "hs"
+#define HC "hc"
 
 int main(int argc, const char *argv[])
 {
@@ -100,7 +99,7 @@ char pluralize(char string[LINE])
         printf("y - add ies");
     }
     
-    if (!strncmp(reverse_string(string), CH,2) || !strncmp(reverse_string(string), SH,2) || !strncmp(reverse_string(string), S,1)) {
+    if (!strncmp(reverse_string(string), HC,2) || !strncmp(reverse_string(string), HS,2) || !strncmp(reverse_string(string), S,1)) {
         
         printf("s -  add es\n");
         printf("ch - add es\n");
@@ -112,7 +111,7 @@ char pluralize(char string[LINE])
 
 
 
-char* reverse_string(char *str)
+char *reverse_string(char *str)
 {
     char temp;
     size_t len = strlen(str) - 1;
