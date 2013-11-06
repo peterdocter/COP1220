@@ -90,21 +90,10 @@ char pluralize(char string[LINE])
 	char plural = ' ';
 
 	if (!strncmp(reverse_string(string), Y, 1)) {
-		//printf("y - add ies");
         reverse_string(string);
-        
-        printf("%lu",strlen(string)-1);
-        //strncat(string, "sss", strlen(string)-0);
-        string[strlen(string)-1] = 0; /* 'P' is not in `p` (and it isn't in `mystr` either) */
-
-        strncpy(string,string,strlen(string)-1);
-        //printf("%s",string);
-
+        string[strlen(string)-1] = 0;
         strcat(string,"ies");
         printf("%s",string);
-
-        //char *strcpy(char *str1, const char *str2);
-
         
 	}
 
