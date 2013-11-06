@@ -25,10 +25,12 @@
 #include <stdio.h>
 #define ZERO	0
 #define LINE	80
-#define Y 'y'
-#define S 's'
-#define SH 'sh'
-#define CH 'ch'
+
+#define Y "y"
+
+#define S "s"
+#define SH "sh"
+#define CH "ch"
 
 
 void myMain();
@@ -41,6 +43,7 @@ char string[LINE];
 char modified[LINE];
 
 char pluralize(char string[LINE]);
+char* reverse_string(char *str);
 
 int main(int argc, const char *argv[])
 {
@@ -55,35 +58,6 @@ void myMain()
     strncpy(modified, string,(size_t)strlen(string));
     //strncpy(modified, modified, 1);
     printf("%c",pluralize(modified));
-    
-    //printf("%s",strrchr (modified, 'sl'));
-
-    if (strrchr(modified, Y)) {
-        //printf("y - add ies");
-    }
-    
-    if (strrchr(modified, S)) {
-        //printf("s -  add es\n");
-    }
-    
-    if (strrchr(modified, CH)) {
-        //printf("ch - add es\n");
-    }
-    
-    if (strrchr(modified, SH)) {
-        //rprintf("sh - add es\n");
-    }
-    
-    
-    //printf("%s",&modified[0]);
-	//printf("%lu\n", strlen(string));
-    //for (int i = strlen(modified); i <= strlen(modified); i--) {
-        	//printf("%i", i);
-            
-    //         printf("%s",strrchr (modified, 'sl'));
-            //=> "ld"
-            //  }
-
 
 }
 
@@ -115,26 +89,49 @@ char *scanLine(char *dest, int dest_len)
 char pluralize(char string[LINE])
 {
 	char plural = ' ';
+    //printf("%s",reverse_string(string));
+    
+    //    int strncmp(const char *str1, const char *str2, size_t n);
 
+    if (!strncmp(string,Y,1)) {
+        
     
-    
-    if (strrchr(string, Y)) {
+    //    if (strrchr(reverse_string(string), Y)) {
         printf("y - add ies");
     }
     
-    if (strrchr(string, S)) {
+    if (strrchr(reverse_string(string), CH)||strrchr(reverse_string(string), SH)||strrchr(reverse_string(string), S)) {
+        
         printf("s -  add es\n");
-    }
-    
-    if (strrchr(string, CH)) {
         printf("ch - add es\n");
-    }
-    
-    if (strrchr(string, SH)) {
         printf("sh - add es\n");
     }
     
-    
-    
 	return plural;
+}
+
+
+
+char* reverse_string(char *str)
+{
+    char temp;
+    size_t len = strlen(str) - 1;
+    size_t i;
+    size_t k = len;
+    
+    for(i = 0; i < len; i++)
+    {
+        temp = str[k];
+        str[k] = str[i];
+        str[i] = temp;
+        k--;
+        
+	    /* As 2 characters are changing place for each cycle of the loop
+         only traverse half the array of characters */
+	    if(k == (len / 2))
+	    {
+	   	    break;
+	    }
+    }
+    return str;
 }
