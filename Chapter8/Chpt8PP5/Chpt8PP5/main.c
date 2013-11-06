@@ -130,18 +130,19 @@ char pluralize(char string[LINE])
 			strcat(string, "es");
 			printf("%s\n", string);
 			done = 1;
-		}
+		}else {
 
-		//reverse_string(string);
+		reverse_string(string);
 
-		// printf("before - %s",string);
+            //printf("before - %s",string);
 		if (strncmp(reverse_string(string), "s", 1)) {
 			reverse_string(string);
-			// string[strlen(string)-1] = 0;
-			strcat(string, "s");
+            //string[strlen(string)-1] = 0;
+            	strcat(string, "s");
 			printf("%s\n", string);
 			done = 1;
-		}
+            }
+        }
 	}
 
 	return plural;
