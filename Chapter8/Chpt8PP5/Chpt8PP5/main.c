@@ -132,7 +132,7 @@ char pluralize(char string[LINE])
 			done = 1;
 		}
 
-		reverse_string(string);
+		//reverse_string(string);
 
 		// printf("before - %s",string);
 		if (strncmp(reverse_string(string), "s", 1)) {
