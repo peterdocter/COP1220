@@ -42,8 +42,8 @@ char *reverse_string(char *str);
 #define Y	"y"
 #define S	"s"
 // reversed for logic in pluralize()
-#define HS	"hs"
-#define HC	"hc"
+#define H	"h"
+#define C	"c"
 
 int main(int argc, const char *argv[])
 {
@@ -89,20 +89,27 @@ char pluralize(char string[LINE])
 {
 	char plural = ' ';
 
-	if (!strncmp(reverse_string(string), Y, 1)) {
+	if (!strncmp(reverse_string(string),"y", 1)) {
         reverse_string(string);
         string[strlen(string)-1] = 0;
         strcat(string,"ies");
-        printf("%s",string);
+        printf("%s\n",string);
+        
+	}
+ 
+    reverse_string(string);
+    //printf("before - %s",string);
+    if (!strncmp(reverse_string(string), "hc", 2)) {
+        reverse_string(string);
+        //string[strlen(string)-1] = 0;
+        strcat(string,"es");
+        printf("%s\n",string);
         
 	}
 
-	if (!strncmp(reverse_string(string), HC, 2) || !strncmp(reverse_string(string), HS, 2) || !strncmp(reverse_string(string), S, 1)) {
-		//printf("s -  add es\n");
-		//printf("ch - add es\n");
-		//printf("sh - add es\n");
-	}
-
+    
+    
+    
 	return plural;
 }
 
