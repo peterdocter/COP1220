@@ -57,7 +57,9 @@ void myMain()
 	scanLine(string, LINE);
 	strncpy(modified, string, (size_t)strlen(string));
 	// strncpy(modified, modified, 1);
-	printf("%c", pluralize(modified));
+    //reverse_string(string);
+	pluralize(modified);
+   	//printf("%c", pluralize(modified));
 }
 
 void promptInput()
@@ -91,7 +93,8 @@ char pluralize(char string[LINE])
 	int		done	= 0;
 
 	while (done != 1) {
-		if (!strncmp(reverse_string(string), "y", 1)) {
+		
+        if (!strncmp(reverse_string(string), "y", 1)) {
 			reverse_string(string);
 			string[strlen(string) - 1] = 0;
 			strcat(string, "ies");
@@ -101,10 +104,10 @@ char pluralize(char string[LINE])
 
 		reverse_string(string);
 
-		// printf("before - %s",string);
+		printf("before - %s",string);
 		if (!strncmp(reverse_string(string), "s", 1)) {
 			reverse_string(string);
-			// string[strlen(string)-1] = 0;
+			string[strlen(string)-1] = 0;
 			strcat(string, "es");
 			printf("%s\n", string);
 			done = 1;
@@ -112,36 +115,40 @@ char pluralize(char string[LINE])
 
 		reverse_string(string);
 
-		// printf("before - %s",string);
+		printf("before - %s",string);
 		if (!strncmp(reverse_string(string), "hc", 2)) {
 			reverse_string(string);
-			// string[strlen(string)-1] = 0;
+			string[strlen(string)-1] = 0;
 			strcat(string, "es");
 			printf("%s\n", string);
 			done = 1;
-		}
+		
+        }
 
 		reverse_string(string);
 
-		// printf("before - %s",string);
+		printf("before - %s",string);
 		if (!strncmp(reverse_string(string), "hs", 2)) {
 			reverse_string(string);
-			// string[strlen(string)-1] = 0;
+			string[strlen(string)-1] = 0;
 			strcat(string, "es");
 			printf("%s\n", string);
 			done = 1;
-		}else {
+		
+        } else {
 
 		reverse_string(string);
 
-            //printf("before - %s",string);
+            printf("before - %s",string);
 		if (strncmp(reverse_string(string), "s", 1)) {
 			reverse_string(string);
-            //string[strlen(string)-1] = 0;
+            string[strlen(string)-1] = 0;
             	strcat(string, "s");
 			printf("%s\n", string);
 			done = 1;
-            }
+            
+        }
+        
         }
 	}
 
