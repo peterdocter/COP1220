@@ -1,0 +1,548 @@
+#PRE
+East
+North
+South
+West
+Four
+Hidden
+High
+Forgotten
+Lone
+Lost
+Low
+Lower
+Many
+Separation
+Ten
+Three
+Top
+Upper
+Deep
+Little
+Long
+Short
+Bare
+Barren
+Bend
+Branch
+Corner
+Fall
+Fork
+Junction
+Middle
+Rim
+Round
+Square
+Twin
+Ancient
+Broken
+Burnt
+Crook
+Crooked
+Dead
+Elder
+Hard
+Living
+Nude
+Old
+Rough
+Slick
+Smooth
+Soft
+Stout
+Straight
+Strong
+Twisted
+Weak
+Wild
+Black
+Blue
+Brown
+Dun
+Green
+Grey
+Red
+White
+Alder
+Bronzewood
+Cedar
+Fir
+Hemlock
+Maple
+Oak
+Pine
+Pole
+Berry
+Bitterroot
+Bracken
+Briar
+Fern
+Gorse
+Grape
+Heather
+Herb
+Holly
+Lily
+Nightshade
+Vine
+Ass
+Bear
+Beaver
+Blacktail
+Buck
+Cat
+Chuck
+Colt
+Coon
+Cougar
+Cow
+Deer
+Duck
+Eagle
+Elk
+Falcon
+Fish
+Fisher
+Fly
+Fox
+Gnat
+Goat
+Goose
+Grizzly
+Grouse
+Hawk
+Hog
+Horse
+Lamb
+Lion
+Lizard
+Mallard
+Martin
+Midge
+Mink
+Mosquito
+Mouse
+Mule
+Pig
+Rat
+Raven
+Serpent
+Sheep
+Shrew
+Skunk
+Snake
+Swan
+Trout
+Wildcat
+Whitetail
+Wolverine
+Demon
+Devil
+Dragon
+Gargoyle
+Worm
+Wyrm
+Dwarf
+Elf
+Gnome
+Goblin
+Halfling
+Hobbit
+Ogre
+Troll
+Sphinx
+Abbot
+Barbarian
+Baron
+Duke
+King
+Lady
+Mercenary
+Miller
+Miner
+Priest
+Reaver
+Scout
+Smith
+Soldier
+Queen
+Wanderer
+Creek
+Falls
+Flow
+River
+Spring
+Stream
+Lake
+Mere
+Pond
+Tarn
+Bay
+Coast
+Cove
+Island
+Isle
+Point
+Strait
+Strand
+Fen
+Marsh
+Swamp
+Bluff
+Butte
+Cliff
+Cone
+Crater
+Dike
+Divide
+Dome
+Hill
+Horn
+Ledge
+Knob
+Knoll
+Mesa
+Moor
+Mountian
+Peak
+Plateau
+Ridge
+Rock
+Saddle
+Spire
+Tor
+Basin
+Bowl
+Canyon
+Dale
+Dell
+Draw
+Flat
+Gap
+Gorge
+Gulch
+Meadow
+Moraine
+Plain
+Prairie
+Ravine
+Sink
+Vale
+Valley
+Forest
+Grove
+Wood
+Woodland
+Cave
+Delving
+Hole
+Mine
+Tunnel
+Barren
+Desert
+Glacier
+Snowfield
+Waste
+Blow
+Cloud
+Dew
+Hurricane
+Mist
+Rain
+Rainbow
+Snow
+Storm
+Sun
+Wind
+Aerial
+Bald
+Blaze
+Bitter
+Bounty
+Clear
+Cold
+Dark
+Deadman
+Dim
+Echo
+Enchanted
+Fell
+Flame
+Grim
+Happy
+Lucky
+Magic
+Moaning
+Moon
+Moonlight
+Poison
+Rich
+Roaring
+Shade
+Shadow
+Shining
+Star
+Sunrise
+Sunset
+Warm
+Wise
+Young
+Backbone
+Bone
+Claw
+Eye
+Fang
+Flesh
+Hand
+Head
+Heart
+Kidney
+Leg
+Liver
+Marrow
+Skull
+Talon
+Tooth
+Wing
+Barrow
+Boulder
+Bridge
+Cabin
+Cache
+Cairn
+Camp
+Corral
+Cottage
+Crown
+Dike
+Ditch
+Gallows
+House
+Lock
+Lookout
+Mill
+Mine
+Pasture
+Path
+Pit
+Road
+Slide
+Tomb
+Tombstone
+Trail
+Way
+Castle
+City
+Dungeon
+Hamlet
+Keep
+Port
+Pyramid
+Ruin
+Shrine
+Temple
+Village
+Ziggurat
+Arrow
+Axe
+Blade
+Bow
+Brand
+Club
+Haft
+Knife
+Mace
+Spear
+Staff
+Sword
+Ale
+Beer
+Brass
+Bronze
+Cinder
+Copper
+Crystal
+Glass
+Gold
+Granite
+Ice
+Iron
+Lava
+Lime
+Marble
+Milk
+Mithril
+Mud
+Salt
+Sand
+Silver
+Slime
+Snow
+Soda
+Steel
+Stone
+Tin
+Water
+Wine
+Wood
+Ball
+Bench
+Book
+Boot
+Candle
+Cart
+Cloak
+Coin
+Diamond
+Emerald
+Feather
+Flagon
+Gem
+Girdle
+Hat
+Helm
+Honey
+Jewell
+Map
+Mirror
+Pack
+Pocket
+Pot
+Ruby
+Sapphire
+Sawtooth
+Slipper
+Snowshoe
+Soap
+Spoon
+Thorn
+Tome
+Treasure
+Wheel
+Whistle
+Wire
+Aneroid
+Carn
+Cornucopia
+Cult
+Garwood
+Gleneden
+Greylock
+Krag
+#SUF
+ Creek
+ Falls
+ Flow
+ River
+ Spring
+ Stream
+ Lake
+ Mere
+ Pond
+ Tarn
+ Bay
+ Coast
+ Cove
+ Island
+ Isle
+ Point
+ Strait
+ Strand
+ Fen
+ Marsh
+ Swamp
+ Bluff
+ Butte
+ Cliff
+ Cone
+ Crater
+ Dike
+ Divide
+ Dome
+ Hill
+ Horn
+ Ledge
+ Knob
+ Knoll
+ Mesa
+ Moor
+ Mountian
+ Peak
+ Plateau
+ Ridge
+ Rock
+ Saddle
+ Spire
+ Tor
+ Basin
+ Bowl
+ Canyon
+ Dale
+ Dell
+ Draw
+ Flat
+ Gap
+ Gorge
+ Gulch
+ Meadow
+ Moraine
+ Plain
+ Prairie
+ Ravine
+ Sink
+ Vale
+ Valley
+ Forest
+ Grove
+ Wood
+ Woodland
+ Cave
+ Delving
+ Hole
+ Mine
+ Tunnel
+ Barren
+ Desert
+ Glacier
+ Snowfield
+ Waste
+ Barrow
+ Boulder
+ Bridge
+ Cabin
+ Cache
+ Cairn
+ Camp
+ Corral
+ Cottage
+ Crown
+ Dike
+ Ditch
+ Gallows
+ House
+ Lock
+ Lookout
+ Mill
+ Mine
+ Pasture
+ Path
+ Pit
+ Road
+ Slide
+ Tomb
+ Tombstone
+ Trail
+ Way
+ Castle
+ City
+ Dungeon
+ Hamlet
+ Keep
+ Port
+ Pyramid
+ Ruin
+ Shrine
+ Temple
+ Village
+ Ziggurat
+#END

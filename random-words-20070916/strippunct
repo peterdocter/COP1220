@@ -1,0 +1,10 @@
+#!/usr/bin/perl -n
+# strips punctuation from the input, to make it more suitable for use with
+# lc
+
+$line = $_;
+$line =~ s|[\W+_]| |g;
+$line =~ s|\s+|\n|g;
+$line =~ s|\d+||g;
+next unless $line =~ m|\w|;
+print $line;

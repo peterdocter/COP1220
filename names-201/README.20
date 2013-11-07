@@ -1,0 +1,156 @@
+Names version 2.0
+Copyright 1994 by Michael Harvey
+Permission granted for unrestricted noncommercial use.
+
+
+ ---------------------------------------------------------------------
+
+This is a complete rewrite of Names.  It has been simplified considerably.
+All code is now ANSI C, and should be portable to almost anything.  The
+DOS console I/O is also gone, replaced by ANSI sequences.  The generator
+is more flexible now.  Options can be specified on the command line, and
+multiple data files can be combined.  Captilization, pluralization, and
+"fancy" names are smarter now.  Finally, it now offers "forever" mode for
+use as input to a pipe.
+
+ ----------------------------------------------------------------------
+
+USAGE: names [-acCdFhlpsv] [-f outfile] [infile...]
+  -a       suppress ansi control codes
+
+		Normally, names uses ANSI sequences to clear the screen
+		and position the cursor.  Turn this off if your terminal
+		doesn't understand ANSI codes.  When off, text scrolls.
+
+  -c       suppress capitalization
+
+		Names normally capitalizes the first letter of each name
+		part (except Middles and Suffixes).
+
+  -C       force capitalization
+
+		This forces names to capitalize every word in the output.
+
+  -d       debug (-D full debug)
+
+		There are several debug levels (not all implemented).
+		Each -d increments the debug level by one; "-d -d" would
+		specify debug level 2.  The -D option forces level 99.
+		Debugging automatically disables ANSI.
+
+  -f file  specify output file, default "names.out"
+
+		Specifies the output file to which names are saved
+		in interactive mode.  If no name is specified the
+		file defaults to "names.out".  If the file does not
+		exist it will be created.  (It will not be created
+		unless something is actually saved).  If the file
+		exists already, new names will be appended; it will
+		not be overwritten.
+
+  -F       forever (default when reading from pipe)
+
+		Forces a non-interactive mode in which names are
+		generated forever in an endless loop.  This would be
+		useful for feeding a continuous stream of names to
+		another program, for instance.
+
+  -h       help
+
+		Displays usage info.
+
+  -l       convert all data to lowercase
+
+		Converts all input data to lowercase as it is read.
+
+  -p       suppress pluralization
+
+  -s       simple output
+
+		Suppresses "fancy" mode.  When names has two nouns,
+		for example, "troll" and "rock", it might produce
+		output such as "Trollrock", "Trolls of the Rock",
+		"Rock Trolls", 'Rock Troll Inn", etc.  Simple mode
+		would cause it to simple produce "Trollrock".
+
+		This option has no effect of Prefix/Middle/Suffix
+		processing.
+
+  -v       version info
+
+  infile   input data file
+
+		The input data file.  If no file is specified,
+		names will read from standard input (and will
+		automatically enter "forever" mode).  If a file is
+		specified, input data will be read from it.  If
+		multiple files are specified, each will be read and
+		the data combined internally.  This makes it possible
+		to have one file of prefixes and another of suffixes,
+		for example.
+
+		Names assumes a default file suffix of .ele on data
+		files.  Given a filename 'foo', it will first attempt
+		to open 'foo'; if that fails, it will attempt to open
+		'foo.ele'.  If both forms fail, it will print a message
+		to standard error and continue.
+
+ -------------------------------------------------------------------
+
+HOW IT WORKS
+
+Names takes name-elements from a data file and combines them to
+form a name, much like forming a compound word.  (If you have ever
+read the appendix to the Lord of the Rings, Tolkein used the same
+method to form his elvish names).
+
+ -------------------------------------------------------------------
+
+FILE FORMAT
+
+Data files can have up to six different sections.  Each section
+specifies are particular type of name-element.  Sections begin
+with "#sec" on a line by itself, where "sec" is the abbreviation
+for the section type.  Valid types are:
+
+#PRE	Prefixes
+#MID	Middles
+#SUF	Suffixes
+#NOUN	Nouns
+#ADJ	Adjectives
+#NADJ	Noun/Adjectives
+
+#sec specifiers are not case sensitive.  If an unknown section is
+encountered, it will be ignored.
+
+There are two different forms names uses to generate output.  The
+first is prefix/suffix mode.  In this method Names will concatentate
+a prefix, and optional middle, and a suffix to produce a word.
+The #mid section is optional; #pre and #suf are required.
+
+The second is noun/adjective mode.  In "simple" mode (the -s option)
+names will simple concatenate them into a single word.  In "fancy"
+mode (the default) names will combine the two in a variety of ways.
+Noun/adjective mode requires at the minimum either a #noun or #nadj
+section.
+
+#NADJ is a special section containing elements which can be used either
+as a noun or an adjective.  Listing an element here is equivalent to
+listing it in both the #NOUN and #ADJ sections.  Examples of words
+which should be specified as #NADJ are "stone", "north", "dark", etc.
+An easy way to determine this is to test it in adjective-noun
+combinations.  For example, "dark" can be used as an adjective
+(dark stone) or a noun (utter dark).  "darkish" should be an adjective
+(darkish stone) as it does not work as a noun (utter darkish).  "Darkness"
+is not an adjective (darkness stone) but *is* a noun (utter darkness).
+There is a lot of crossover; most nouns can be used as adjectives.  By
+distinguishing, however, you can force Names to use an element in a
+particular way.
+
+ --------------------------------------------------------------------
+
+You are free to use, modify, and distribute this program without
+restriction.  Just leave the copyright notice intact.
+
+Mike Harvey
+mike@cs.pdx.edu

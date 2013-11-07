@@ -1,0 +1,16 @@
+NAMES
+
+Copyright 1993 by Michael Harvey
+Names version 1.0 may be copied freely but may NOT be sold for profit.
+
+                          ---------------------
+
+NAMES is a program which generates names from "name elements."  It is useful
+for role players as well as writers.  The program itself is pretty simple,
+and (I think) intuitive.  To get help just press F1, or '?'.
+
+        Note:  the <P> print list function works for my Panasonic KXP-1123.
+        I haven't tested it with anything else, though it should be fairly
+        generic.  Also, the <S> save names command appends all the names on
+        the screen to whatever filename you give it.
+

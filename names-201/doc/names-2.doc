@@ -1,0 +1,42 @@
+NAMES version 2.0
+Copyright 1994 by Michael Harvey
+
+
+This is a complete rewrite of Names 1.0.
+
+It works wonderfully on my Linux system; if should port easily to
+most other UNIXes.  The only potential problem is the fie keyb.c,
+which tweaks the terminal to provide single-key input.
+
+I haven't tried the new version for DOS; it will probably need some
+minor changes.  In particular, you *won't* need the keyb.c file for
+DOS; instead, use the getch() function from <conio.h>, for users of
+Borland and Microsoft compilers.  You will also need to either use
+ANSI.SYS, the -a option, or modify the clear() and move() functions.
+
+The program is simple.  For command-line options, type 'names -h'
+to get a usage screen. The README-2.0 file has a description of the
+different options.
+
+Names will read each of the files specified on the command-line,
+and combine them internally.  It will then display 40 names on the
+screen, each with a corresponding letter.  To save a particular
+name, press the corresponding letter.  It will be added to the
+output file and the letter will disappear, indicating that name
+has been saved.  To generate another screenful, press the spacebar.
+You can escape to a shell at any time by pressing '!'.  Finally, to
+quit, just press the Return key.
+
+The file elements.doc contains useful information on putting together
+your own element files.
+
+Comments are always welcome.  If you modify Names, port it to another
+OS, add curses support, or whatever, please send me a copy of the
+modified sources.  Also, if you come up with any really cool element
+files, I'd appreciate recieving a copy (for my own use!)
+
+I hope you find it useful.  Have fun!
+
+Mike Harvey
+mike@cs.pdx.edu
+
