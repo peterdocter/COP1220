@@ -57,6 +57,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 //Keywords List 32 words
 //http://tigcc.ticalc.org/doc/keywords.html
@@ -93,26 +94,44 @@ char	kwVoid[]		= "void";
 char	kwVolatile[]	= "volatile";
 char	kwWhile[]		= "while";
 
+//char dictionary[32] = {'0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'};
+
+//char dictionary[32][10] = {*kwAuto,*kwBreak,*kwCase,*kwChar,*kwConst,*kwContinue,*kwDefault,*kwDo,*kwDouble,*kwElse,*kwEnum,*kwExtern,*kwFloat,*kwFor,*kwGoto,*kwIf,*kwInt,*kwLong,*kwRegister,*kwReturn,*kwShort,*kwSigned,*kwSizeOf,*kwStatic,*kwStruct,*kwSwitch,*kwTypeOf,*kwUnion,*kwUnSigned,*kwVoid,*kwVolatile,*kwWhile};
+
+void    populateDictionary();
+
 float returnRand();
 float returnClock();
 
+char keyword[100];
+int keywordIndex;
+
 int main(int argc, const char *argv[])
 {
-
-	printf("%s", kwAuto);
-	printf("%c", kwAuto[0]);
-   	printf("%c", kwAuto[1]);
-   	printf("%c", kwAuto[2]);
-   	printf("%c", kwAuto[3]);
-
     
-    int keywordIndex = returnRand();
+    keywordIndex = returnRand();
     printf("keywordIndex = %i",keywordIndex);
+    populateDictionary();
+    //  printf("\nkeyword = %s",&dictionary[keywordIndex]);
+    
 	return 0;
 }
 
 
+void populateDictionary(){
 
+
+    if (keywordIndex != 0) {
+        
+        strncpy(keyword,kwAuto,strlen(kwAuto));
+        printf("\nkeyword - %s",&keyword);
+    }
+    
+    
+    //printf("\n%s",&dictionary[keywordIndex]);
+    //printf("\n%s\n",&dictionary[keywordIndex]);
+    
+}
 
 
 ///returnRand
