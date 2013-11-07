@@ -107,15 +107,33 @@ float returnClock();
 char	keyword[100];
 int		keywordIndex;
 
+
+void printKeywordSubs(char word[],int i);
+    
 int main(int argc, const char *argv[])
 {
 	keywordIndex = returnRand();
 	printf("keywordIndex = %i", keywordIndex);
 	populateDictionary();
 	//  printf("\nkeyword = %s",&dictionary[keywordIndex]);
-
+    printKeywordSubs(keyword,strlen(keyword)-1);
 	return 0;
 }
+
+
+
+void printKeywordSubs(char word[],int i){
+
+    for (int i = 0; i< strlen(word) ; i++) {
+        //
+        
+        printf("\nc = %c",word[i]);
+        
+    }
+
+
+}
+
 
 void populateDictionary()
 {
