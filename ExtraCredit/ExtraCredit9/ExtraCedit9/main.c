@@ -121,13 +121,210 @@ int main(int argc, const char *argv[])
 void populateDictionary(){
 
 
-    if (keywordIndex != 0) {
+    if (keywordIndex == 0) {
         
         strncpy(keyword,kwAuto,strlen(kwAuto));
         printf("\nkeyword - %s",&keyword);
     }
     
-    
+    if (keywordIndex == 1) {
+        
+        strncpy(keyword,kwBreak,strlen(kwBreak));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 2) {
+        
+        strncpy(keyword,kwCase,strlen(kwCase));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 3) {
+        
+        strncpy(keyword,kwChar,strlen(kwChar));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 4) {
+        
+        strncpy(keyword,kwConst,strlen(kwConst));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 5) {
+        
+        strncpy(keyword,kwContinue,strlen(kwContinue));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 6) {
+        
+        strncpy(keyword,kwDefault,strlen(kwDefault));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 7) {
+        
+        strncpy(keyword,kwDo,strlen(kwDo));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 8) {
+        
+        strncpy(keyword,kwDouble,strlen(kwDouble));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 9) {
+        
+        strncpy(keyword,kwElse,strlen(kwElse));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 10) {
+        
+        strncpy(keyword,kwEnum,strlen(kwEnum));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 11) {
+        
+        strncpy(keyword,kwExtern,strlen(kwExtern));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 12) {
+        
+        strncpy(keyword,kwFloat,strlen(kwFloat));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 13) {
+        
+        strncpy(keyword,kwFor,strlen(kwFor));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 14) {
+        
+        strncpy(keyword,kwGoto,strlen(kwGoto));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 15) {
+        
+        strncpy(keyword,kwIf,strlen(kwIf));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 16) {
+        
+        strncpy(keyword,kwInt,strlen(kwInt));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 17) {
+        
+        strncpy(keyword,kwLong,strlen(kwLong));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 18) {
+        
+        strncpy(keyword,kwRegister,strlen(kwRegister));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 19) {
+        
+        strncpy(keyword,kwReturn,strlen(kwReturn));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 20) {
+        
+        strncpy(keyword,kwShort,strlen(kwShort));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 21) {
+        
+        strncpy(keyword,kwSigned,strlen(kwSigned));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 22) {
+        
+        strncpy(keyword,kwSizeOf,strlen(kwSizeOf));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 23) {
+        
+        strncpy(keyword,kwStatic,strlen(kwStatic));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 24) {
+        
+        strncpy(keyword,kwStruct,strlen(kwStruct));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 25) {
+        
+        strncpy(keyword,kwSwitch,strlen(kwSwitch));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 26) {
+        
+        strncpy(keyword,kwTypeOf,strlen(kwTypeOf));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 27) {
+        
+        strncpy(keyword,kwUnion,strlen(kwUnion));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 28) {
+        
+        strncpy(keyword,kwUnSigned,strlen(kwUnSigned));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 29) {
+        
+        strncpy(keyword,kwVoid,strlen(kwVoid));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 30) {
+        
+        strncpy(keyword,kwVolatile,strlen(kwVolatile));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 31) {
+        
+        strncpy(keyword,kwWhile,strlen(kwWhile));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 32) {
+        
+        strncpy(keyword,kwAuto,strlen(kwAuto));
+        printf("\nkeyword - %s",&keyword);
+    }
+
+    if (keywordIndex == 33) {
+        
+        strncpy(keyword,kwAuto,strlen(kwAuto));
+        printf("\nkeyword - %s",&keyword);
+    }
+
     //printf("\n%s",&dictionary[keywordIndex]);
     //printf("\n%s\n",&dictionary[keywordIndex]);
     
