@@ -127,7 +127,7 @@ void printKeywordSubs(char word[],int i){
     for (int i = 0; i< strlen(word) ; i++) {
         //
         
-        printf("\nc = %c",word[i]);
+        printf("\nword[%i] = %c",i,word[i]);
         
     }
 
