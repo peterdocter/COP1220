@@ -14,46 +14,6 @@
  *
  */
 
-/*
- *   //ANSI C keyword strings
- *
- *   auto
- *   break
- *   case
- *   char
- *   const
- *   continue
- *   default
- *   do
- *   double
- *   else
- *   enum
- *   extern
- *   float
- *   for
- *   goto
- *   if
- *   int
- *   long
- *   register
- *   return
- *   short
- *   signed
- *   sizeof
- *   static
- *   struct
- *   switch
- *   typedef
- *   union
- *   unsigned
- *   void
- *   volatile
- *   while
- *
- *
- *
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -106,34 +66,24 @@ float returnClock();
 
 char	keyword[100];
 int		keywordIndex;
+void	printKeywordSubs(char word[], int i);
 
-
-void printKeywordSubs(char word[],int i);
-    
 int main(int argc, const char *argv[])
 {
 	keywordIndex = returnRand();
 	printf("keywordIndex = %i", keywordIndex);
 	populateDictionary();
 	//  printf("\nkeyword = %s",&dictionary[keywordIndex]);
-    printKeywordSubs(keyword,strlen(keyword)-1);
+	printKeywordSubs(keyword, (int)strlen(keyword) - 1);
 	return 0;
 }
 
-
-
-void printKeywordSubs(char word[],int i){
-
-    for (int i = 0; i< strlen(word) ; i++) {
-        //
-        
-        printf("\nword[%i] = %c",i,word[i]);
-        
-    }
-
-
+void printKeywordSubs(char word[], int i)
+{
+	for (int i = 0; i < strlen(word); i++) {
+		printf("\nword[%i] = %c", i, word[i]);
+	}
 }
-
 
 void populateDictionary()
 {
