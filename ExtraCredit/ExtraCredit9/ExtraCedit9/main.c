@@ -21,111 +21,76 @@
 
 // Keywords List 32 words
 // http://tigcc.ticalc.org/doc/keywords.html
-    char	kwAuto[]		= "auto";
-    char	kwBreak[]		= "break";
-    char	kwCase[]		= "case";
-    char	kwChar[]		= "char";
-    char	kwConst[]		= "const";
-    char	kwContinue[]	= "continue";
-    char	kwDefault[]		= "default";
-    char	kwDo[]			= "do";
-    char	kwDouble[]		= "double";
-    char	kwElse[]		= "else";
-    char	kwEnum[]		= "enum";
-    char	kwExtern[]		= "extern";
-    char	kwFloat[]		= "float";
-    char	kwFor[]			= "for";
-    char	kwGoto[]		= "goto";
-    char	kwIf[]			= "if";
-    char	kwInt[]			= "int";
-    char	kwLong[]		= "long";
-    char	kwRegister[]	= "register";
-    char	kwReturn[]		= "return";
-    char	kwShort[]		= "short";
-    char	kwSigned[]		= "signed";
-    char	kwSizeOf[]		= "sizeof";
-    char	kwStatic[]		= "static";
-    char	kwStruct[]		= "struct";
-    char	kwSwitch[]		= "switch";
-    char	kwTypeOf[]		= "typeof";
-    char	kwUnion[]		= "union";
-    char	kwUnSigned[]	= "unsigned";
-    char	kwVoid[]		= "void";
-    char	kwVolatile[]	= "volatile";
-    char	kwWhile[]		= "while";
+char	kwAuto[]		= "auto";
+char	kwBreak[]		= "break";
+char	kwCase[]		= "case";
+char	kwChar[]		= "char";
+char	kwConst[]		= "const";
+char	kwContinue[]	= "continue";
+char	kwDefault[]		= "default";
+char	kwDo[]			= "do";
+char	kwDouble[]		= "double";
+char	kwElse[]		= "else";
+char	kwEnum[]		= "enum";
+char	kwExtern[]		= "extern";
+char	kwFloat[]		= "float";
+char	kwFor[]			= "for";
+char	kwGoto[]		= "goto";
+char	kwIf[]			= "if";
+char	kwInt[]			= "int";
+char	kwLong[]		= "long";
+char	kwRegister[]	= "register";
+char	kwReturn[]		= "return";
+char	kwShort[]		= "short";
+char	kwSigned[]		= "signed";
+char	kwSizeOf[]		= "sizeof";
+char	kwStatic[]		= "static";
+char	kwStruct[]		= "struct";
+char	kwSwitch[]		= "switch";
+char	kwTypeOf[]		= "typeof";
+char	kwUnion[]		= "union";
+char	kwUnSigned[]	= "unsigned";
+char	kwVoid[]		= "void";
+char	kwVolatile[]	= "volatile";
+char	kwWhile[]		= "while";
 
 // char dictionary[32][10] = {*kwAuto,*kwBreak,*kwCase,*kwChar,*kwConst,*kwContinue,*kwDefault,*kwDo,*kwDouble,*kwElse,*kwEnum,*kwExtern,*kwFloat,*kwFor,*kwGoto,*kwIf,*kwInt,*kwLong,*kwRegister,*kwReturn,*kwShort,*kwSigned,*kwSizeOf,*kwStatic,*kwStruct,*kwSwitch,*kwTypeOf,*kwUnion,*kwUnSigned,*kwVoid,*kwVolatile,*kwWhile};
 
 void populateDictionary();
+
 float returnRand();
+
 float returnClock();
-void	printKeywordSubs(char word[], int i);
+
+void printKeywordSubs(char word[], int i);
 
 char	keyword[100];
 int		keywordIndex;
-int     keywordLength;
-
+int		keywordLength;
 
 void setUp();
+
 void myMain();
 
 int main(int argc, const char *argv[])
 {
-    myMain();
+	myMain();
 	return 0;
 }
 
-
-void myMain(){
-    
-    setUp();
-
-
-
-
-
-
+void myMain()
+{
+	setUp();
 }
-void setUp(){
 
-    keywordIndex = returnRand();
+void setUp()
+{
+	keywordIndex = returnRand();
 	printf("keywordIndex = %i", keywordIndex);
 	populateDictionary();
 	//  printf("\nkeyword = %s",&dictionary[keywordIndex]);
 	printKeywordSubs(keyword, (int)strlen(keyword) - 1);
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void printKeywordSubs(char word[], int i)
 {
