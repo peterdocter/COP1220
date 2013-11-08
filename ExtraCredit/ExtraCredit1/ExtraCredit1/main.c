@@ -80,7 +80,7 @@ void calcDivByNine(int num)
 
 void printFinalSum(double sum)
 {
-	if (sum == 9) {
+	if (sum == 9||(sum == 0&& cycles>0)) {
 		printf("\nFinal Sum = %0.2lf\nTherefore %0.0lf is evenly divisible by 9!\n", sum, input);
 	} else {
 		printf("\nFinal Sum = %0.2lf\nTherefore %0.0lf is NOT evenly divisible by 9!\n", sum, input);
