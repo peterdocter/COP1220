@@ -22,11 +22,12 @@
 double	input;
 int		divisible = 1;
 void	myMain();
-double ten = 10;
-double numArray[];
-double sum=0;
-int sentinel = 0;
-int counter = 0;
+
+double	ten = 10;
+double	numArray[];
+double	sum			= 0;
+int		sentinel	= 0;
+int		counter		= 0;
 
 void calcDivByNine(int);
 
@@ -41,31 +42,33 @@ void myMain()
 	printf("input number between 0 and 999999999 ---> ");
 	scanf("%lf", &input);
 	calcDivByNine(input);
-   	calcDivByNine(sum);
-    //calcDivByNine(sum);
+	calcDivByNine(sum);
+	// calcDivByNine(sum);
 	// printf("input - %lf",input);
 }
 
-void calcDivByNine(int num){
-    sum=0;
-    for (int i = 0; i <= 80; i++) {
-        numArray[i]= num % 10;
-        printf("numArray[%i] = %i\n",i,(int)numArray[i]);
-        num = num/10;
-        printf("%i\n",num);
-        counter = counter+1;
-        printf("counter = %i\n",counter);
-    }
+void calcDivByNine(int num)
+{
+	sum = 0;
 
-    printf("\n______________next for_________________\n");
-    
-    for (int i =counter-1; i>=0; i--) {
-        printf("\ni = %i\n",i);
-        printf("numArray[%i] = %lf\n",i,numArray[i]);
-        sum = sum + numArray[i];
-        numArray[i]=0;
-        printf("sum = %lf",sum);
-    }
-    
-    counter = 0;
+	for (int i = 0; i <= 80; i++) {
+		numArray[i] = num % 10;
+		printf("numArray[%i] = %i\n", i, (int)numArray[i]);
+		num = num / 10;
+		printf("%i\n", num);
+		counter = counter + 1;
+		printf("counter = %i\n", counter);
+	}
+
+	printf("\n______________next for_________________\n");
+
+	for (int i = counter - 1; i >= 0; i--) {
+		printf("\ni = %i\n", i);
+		printf("numArray[%i] = %lf\n", i, numArray[i]);
+		sum			= sum + numArray[i];
+		numArray[i] = 0;
+		printf("sum = %lf", sum);
+	}
+
+	counter = 0;
 }
