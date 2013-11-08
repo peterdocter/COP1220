@@ -20,11 +20,36 @@
 
 #include <stdio.h>
 
+double firstArray[]={-10.5,-1.8,3.5,6.3,7.2};
+double secondArray[]={-1.8,3.1,6.3};
+
+void sortAndMerge(double *fA,double *fB);
+
 int main(int argc, const char * argv[])
 {
 
-    // insert code here...
-    printf("Hello, World!\n");
+    sortAndMerge(firstArray, secondArray);
+    
+    
+    for (int i=0; i<sizeof firstArray / sizeof *firstArray; i++) {
+        //
+        printf("\nfirstArray[%i] = %lf\n",i,firstArray[i]);
+    }
+    
+    
+    for (int i=0; i<sizeof secondArray / sizeof *secondArray; i++) {
+        //
+        printf("\nsecondArray[%i] = %lf\n",i,secondArray[i]);
+    }
+    
+    
     return 0;
 }
 
+
+void sortAndMerge(double *fA,double *fB){
+
+
+    
+
+}
