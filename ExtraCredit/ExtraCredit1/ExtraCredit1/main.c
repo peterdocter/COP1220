@@ -28,8 +28,10 @@ double	numArray[];
 double	sum			= 0;
 int		sentinel	= 0;
 int		counter		= 0;
+int		cycles	= 0;
+void	calcDivByNine(int);
 
-void calcDivByNine(int);
+void printFinalSum(double sum);
 
 int main(int argc, const char *argv[])
 {
@@ -45,30 +47,42 @@ void myMain()
 	calcDivByNine(sum);
 	// calcDivByNine(sum);
 	// printf("input - %lf",input);
+
+	printFinalSum(sum);
 }
 
 void calcDivByNine(int num)
 {
-	sum = 0;
+	sum			= 0;
+	cycles	= cycles + 1;
 
 	for (int i = 0; i <= 80; i++) {
 		numArray[i] = num % 10;
-		printf("numArray[%i] = %i\n", i, (int)numArray[i]);
+		//printf("numArray[%i] = %i\n", i, (int)numArray[i]);
 		num = num / 10;
-		printf("%i\n", num);
+		//printf("%i\n", num);
 		counter = counter + 1;
-		printf("counter = %i\n", counter);
+		//printf("counter = %i\n", counter);
 	}
 
-	printf("\n______________next for_________________\n");
+	//printf("\n______________next for_________________\n");
 
 	for (int i = counter - 1; i >= 0; i--) {
-		printf("\ni = %i\n", i);
-		printf("numArray[%i] = %lf\n", i, numArray[i]);
+		//printf("\ni = %i\n", i);
+		//printf("numArray[%i] = %lf\n", i, numArray[i]);
 		sum			= sum + numArray[i];
 		numArray[i] = 0;
-		printf("sum = %lf", sum);
+		//printf("The sum of the digits = %lf", sum);
 	}
 
 	counter = 0;
+}
+
+void printFinalSum(double sum)
+{
+	if (sum == 9) {
+		printf("\nFinal Sum = %0.2lf\nTherefore %0.0lf is evenly divisible by 9!\n", sum, input);
+	} else {
+		printf("\nFinal Sum = %0.2lf\nTherefore %0.0lf is NOT evenly divisible by 9!\n", sum, input);
+	}
 }
