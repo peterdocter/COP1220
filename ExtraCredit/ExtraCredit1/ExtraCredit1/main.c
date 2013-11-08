@@ -41,11 +41,11 @@ void myMain()
 
 void calcDivByNine(double num)
 {
-	//double nine = 9.0;
+	// double nine = 9.0;
 
-	if ((fmod(num, 9.0) == 0.000000)&& num!=0) {
+	if ((fmod(num, 9.0) == 0.000000) && (num != 0)) {
 		printf("num %lf\n", num);
-        printf("TRUE %lf\n", num / 9);
+		printf("TRUE %lf\n", num / 9);
 		num			= num / 9;
 		divisible	= divisible + 1;
 		printf("\ndivisible - %i\n", divisible);
@@ -53,7 +53,6 @@ void calcDivByNine(double num)
 	} else {
 		printf("FALSE\n");
 		divisible = 0;
-        printf("\ndivisible - %i\n", divisible);
-
+		printf("\ndivisible - %i\n", divisible);
 	}
 }
