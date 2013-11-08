@@ -16,16 +16,19 @@
  *
  *
  * */
-
-
 #include <stdio.h>
 #include <math.h>
 
 double	input;
 int		divisible = 1;
 void	myMain();
+double ten = 10;
+int numArray[];
+int sum=0;
+int sentinel = 0;
+int counter = 0;
 
-void calcDivByNine(double);
+void calcDivByNine(int);
 
 int main(int argc, const char *argv[])
 {
@@ -41,20 +44,39 @@ void myMain()
 	// printf("input - %lf",input);
 }
 
-void calcDivByNine(double num)
-{
-	// double nine = 9.0;
+void calcDivByNine(int num){
+    
+    //numArray[num];
+    // int counter = 0;
+    for (int i = 0; i <= 80; i++) {
+        //
+        numArray[i]= num % 10;
+        printf("numArray[%i] = %i\n",i,numArray[i]);
+        
+        num = num/10;
+        printf("%i\n",num);
+        counter = counter+1;
+        
+        
+        printf("counter = %i\n",counter);
+    }
+    
+    printf("\n______________next for_________________\n");
+    
+    
+    
+    for (int i =counter-1; i>=0; i--) {
+        
+        printf("\ni = %i\n",i);
+        printf("numArray[%i] = %i\n",i,numArray[i]);
 
-	if ((fmod(num, 9.0) == 0.000000) && (num != 0)) {
-		printf("num %lf\n", num);
-		printf("TRUE %lf\n", num / 9);
-		num			= num / 9;
-		divisible	= divisible + 1;
-		printf("\ndivisible - %i\n", divisible);
-		calcDivByNine(num);
-	} else {
-		printf("FALSE\n");
-		divisible = 0;
-		printf("\ndivisible - %i\n", divisible);
-	}
+        
+        sum = sum + numArray[i];
+        
+        printf("sum = %i",sum);
+    }
+  
+    
+    
+    
 }
