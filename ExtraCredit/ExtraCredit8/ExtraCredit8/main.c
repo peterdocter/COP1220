@@ -35,6 +35,8 @@ void inputNumberOfEmployees();
 
 char *scanLine(char *dest, int dest_len);
 
+void assignFirstName(char *input, int loopLength);
+
 int main(int argc, const char *argv[])
 {
 	myMain();
@@ -56,18 +58,33 @@ void inputEmployee()
 		//
 
 		printf("Please enter the Employees first name --> ");
-		//	deBlank(scanLine(input, LINE), output, (int)strlen(input) + 1);
-		scanLine(input, LINE);
-		strcpy(&firstName[i],input);
-		printf("%s", &firstName[i]);
-	
-    }
+		assignFirstName(scanLine(input, LINE), (int)strlen(input) + 1);
+		
+        scanLine(input,LINE);
+        
+        assignFirstName(input, (int)strlen(input)-1);
+        
+        //scanLine(input, LINE);
+		//strcpy(&firstName[i], input);
+		//printf("%s", &firstName[i]);
+        
+        
+        
+        
+	}
 }
 
 void inputNumberOfEmployees()
 {
 	printf("Plese enter the number of employees --> ");
 	scanf("%i", &numberOfEmployees);
+}
+
+void assignFirstName(char *input, int loopLength) {
+
+    //printf("%s",input);
+
+
 }
 
 // Based on Figure 8.15 in Book
