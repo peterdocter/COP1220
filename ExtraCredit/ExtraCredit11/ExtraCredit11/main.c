@@ -34,25 +34,39 @@ int main(int argc, const char *argv[])
 	sortAndMerge(firstArray, secondArray);
 
 	for (int i = 0; i < ((sizeof firstArray / sizeof *firstArray) | (sizeof secondArray / sizeof *secondArray)); i++) {
-		printf("\nfirstArray[%i]  = %.2lf\n", i, firstArray[i]);
-		printf("\nsecondArray[%i] = %.2lf\n", i, secondArray[i]);
+		//printf("\nfirstArray[%i]  = %.2lf\n", i, firstArray[i]);
+		//printf("\nsecondArray[%i] = %.2lf\n", i, secondArray[i]);
 
 		// double	firstArray[] = {-10.5, -1.8, 3.5, 6.3, 7.2};
 		// double	secondArray[] = {-1.8, 3.1, 6.3};
 
-		if (firstArray[i] > secondArray[i]) {
-			thirdArray[j]	= firstArray[i];
-			thirdArray[j] = secondArray[i];
+		if (firstArray[i] < secondArray[i]) {
+			
+            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
+            thirdArray[j] = firstArray[i];
+			j++;
+            
+            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
+            thirdArray[j] = secondArray[i];
             j++;
+            
+            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
+
             printf("j = %i",j);
             
 		} else {
-			thirdArray[j]	= secondArray[i];
-			thirdArray[j] = firstArray[i];
-            j++;
+			
+            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
+            thirdArray[j]	= secondArray[i];
+			j++;
+            
+            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
+            thirdArray[j] = firstArray[i];
+            
+            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
+            
             printf("j = %i",j);
 
-            
         }
 
 		// j++;
@@ -69,35 +83,3 @@ int main(int argc, const char *argv[])
 
 void sortAndMerge(double *fA, double *fB) {}
 
-void merge(int a[], int m, int b[], int n, int sorted[])
-{
-	int i, j, k;
-
-	j = k = 0;
-
-	for (i = 0; i < m + n; ) {
-		if ((j < m) && (k < n)) {
-			if (a[j] < b[k]) {
-				sorted[i] = a[j];
-				j++;
-			} else {
-				sorted[i] = b[k];
-				k++;
-			}
-
-			i++;
-		} else if (j == m) {
-			for (; i < m + n; ) {
-				sorted[i] = b[k];
-				k++;
-				i++;
-			}
-		} else {
-			for (; i < m + n; ) {
-				sorted[i] = a[j];
-				j++;
-				i++;
-			}
-		}
-	}
-}
