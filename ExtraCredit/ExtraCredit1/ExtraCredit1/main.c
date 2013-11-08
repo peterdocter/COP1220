@@ -41,12 +41,13 @@ void myMain()
 	printf("input number between 0 and 999999999 ---> ");
 	scanf("%lf", &input);
 	calcDivByNine(input);
+   	calcDivByNine(sum);
     //calcDivByNine(sum);
 	// printf("input - %lf",input);
 }
 
 void calcDivByNine(int num){
-    
+    sum=0;
     for (int i = 0; i <= 80; i++) {
         numArray[i]= num % 10;
         printf("numArray[%i] = %i\n",i,(int)numArray[i]);
@@ -62,9 +63,9 @@ void calcDivByNine(int num){
         printf("\ni = %i\n",i);
         printf("numArray[%i] = %lf\n",i,numArray[i]);
         sum = sum + numArray[i];
+        numArray[i]=0;
         printf("sum = %lf",sum);
     }
-   
     
     counter = 0;
 }
