@@ -23,7 +23,7 @@ double	input;
 int		divisible = 1;
 void	myMain();
 double ten = 10;
-int numArray[];
+double numArray[];
 int sum=0;
 int sentinel = 0;
 int counter = 0;
@@ -38,7 +38,7 @@ int main(int argc, const char *argv[])
 
 void myMain()
 {
-	printf("input number ---> ");
+	printf("input number between 0 and 999999999 ---> ");
 	scanf("%lf", &input);
 	calcDivByNine(input);
 	// printf("input - %lf",input);
