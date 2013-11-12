@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #define LINE	80
 #define ZERO	0
 #define BLANK	' '
@@ -27,6 +28,8 @@ void myMain();
 void promptInput();
 
 int determinePalindrone(char *string);
+
+int StringIsPalindrome(const char* string);
 
 void deBlank(char *input, char *output, int loopLength);
 
@@ -44,7 +47,7 @@ void myMain()
 	deBlank(scanLine(input, LINE), output, (int)strlen(input) + 1);
 	//printf("\n%s\n", output);
     printf("\n%i\n",determinePalindrone(output));
-    
+    printf("bool = %i",StringIsPalindrome(output));
     
     
     
@@ -88,7 +91,7 @@ int determinePalindrone(char *string){
     }
     
     
-    determinePalindrone(output);
+    //determinePalindrone(output);
     
     
     return num;
@@ -114,3 +117,30 @@ char *scanLine(char *dest, int dest_len)
     
 	return dest;
 }
+
+
+/*
+ * Description:
+ *  Checks if a string is a palindrome
+ * Parameters:
+ *  string - the string who is going to be verified
+ * Returns:
+ *  true - the string is a palindrome
+ *  false - the string is not a palindrome
+ */
+int StringIsPalindrome(const char* string)
+{
+    long length = strlen(string);
+    int i;
+    int isPalindrome = 1;
+    for(i = 0; i<(length/2); i++)
+    {
+        if(string[i]!=string[length-i-1])
+        {
+            isPalindrome = 0;
+            break;
+        }
+    }
+    return isPalindrome;
+}
+
