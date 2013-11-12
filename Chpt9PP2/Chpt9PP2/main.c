@@ -88,7 +88,7 @@ int determinePalindrone(char *string){
     }
     
     
-    
+    determinePalindrone(output);
     
     
     return num;
