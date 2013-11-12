@@ -20,6 +20,7 @@
 #define BLANK	' '
 char	input[LINE];
 char	output[LINE];
+int num = 0;
 
 void myMain();
 
@@ -73,8 +74,11 @@ void deBlank(char *input, char *output, int loopLength)
 
 int determinePalindrone(char *string){
     
-    int num = 0;
     
+    size_t sizeEquals = strlen(string);
+
+    long counter = counter + sizeEquals;
+    printf("counter = %ld",counter);
     long length = strlen(string);
     
     if (1) {
@@ -82,6 +86,9 @@ int determinePalindrone(char *string){
         printf("%s -> converted to %s length = %ld",input,string,length);
         
     }
+    
+    
+    
     
     
     return num;
