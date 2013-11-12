@@ -128,6 +128,9 @@ char *scanLine(char *dest, int dest_len)
  *  true - the string is a palindrome
  *  false - the string is not a palindrome
  */
+
+//Palindrone Test Sample
+//http://dystopiancode.blogspot.com/2012/07/palindrome-checking-algorithm-in-ansi-c.html
 int StringIsPalindrome(const char* string)
 {
     long length = strlen(string);
