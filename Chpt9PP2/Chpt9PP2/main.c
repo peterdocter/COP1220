@@ -72,12 +72,15 @@ void deBlank(char *input, char *output, int loopLength)
 
 
 int determinePalindrone(char *string){
+    
     int num = 0;
+    
     long length = strlen(string);
     
-    if (length % 2 == 0) {
+    if (1) {
         //
-        printf("length = %ld",length % 2);
+        printf("length = %ld",(length));
+        
     }
     
     
