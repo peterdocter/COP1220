@@ -41,7 +41,7 @@ void myMain()
 {
 	promptInput();
 	deBlank(scanLine(input, LINE), output, (int)strlen(input) + 1);
-	printf("\n%s\n", output);
+	//printf("\n%s\n", output);
     printf("\n%i\n",determinePalindrone(output));
     
     
@@ -51,7 +51,7 @@ void myMain()
 
 void promptInput()
 {
-	printf("Please enter a string to be deblanked --> ");
+	printf("Please enter a string to be analyzed --> ");
 }
 
 void deBlank(char *input, char *output, int loopLength)
@@ -79,7 +79,7 @@ int determinePalindrone(char *string){
     
     if (1) {
         //
-        printf("length = %ld",(length));
+        printf("%s -> converted to %s length = %ld",input,string,length);
         
     }
     
