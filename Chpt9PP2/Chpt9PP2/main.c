@@ -56,7 +56,13 @@ void myMain()
         
         printf("%s is a Palindrone when it is de blanked and evaluated as --> \n%s\n",input,output);
         
-    }else{}
+    }else{
+    
+    
+        printf("%s is NOT a Palindrone when it is de blanked and evaluated as --> \n%s\n",input,output);
+        
+    
+    }
 }
 
 void promptInput()
