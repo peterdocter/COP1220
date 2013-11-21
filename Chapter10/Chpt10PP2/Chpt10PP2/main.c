@@ -16,8 +16,9 @@
  */
 
 #include <stdio.h>
+#define ZERO 0
 
-typedef struct {
+struct {
 	char	elementName[80];
 	int		atmomicNum;
 	char	chemicalSymbol[2];
@@ -29,6 +30,8 @@ typedef struct {
 void myMain();
 
 void getMembers();
+
+char *scanString(char *dest, int dest_len);
 
 void enterElementName();
 
@@ -59,12 +62,10 @@ int main(int argc, const char *argv[])
 	myMain();
 	return 0;
 }
-void myMain(){
 
-    
-    getMembers();
-
-    
+void myMain()
+{
+	getMembers();
 }
 
 void getMembers()
@@ -94,7 +95,12 @@ void getMembers()
 	enterShellSeven();
 }
 
-void enterElementName() {}
+void enterElementName() {
+
+    scanString(element_t.elementName, 80);
+    printf("%s",element_t.elementName);
+    
+}
 
 void enterAtomicNumber() {}
 
@@ -117,3 +123,26 @@ void enterShellFive() {}
 void enterShellSix() {}
 
 void enterShellSeven() {}
+
+
+//func(scanLine(input, LINE), output, (int)strlen(input) + 1);
+
+// Based on Figure 8.15 in Book
+char *scanString(char *dest, int dest_len)
+{
+	int i, ch;
+
+	i = ZERO;
+
+	for (ch = getchar(); ch != '\n' && ch != EOF && i < dest_len - 1; ch = getchar()) {
+		dest[i++] = ch;
+	}
+
+	dest[i] = '\0';
+
+	while (ch != '\n' && ch != EOF) {
+		ch = getchar();
+	}
+
+	return dest;
+}
