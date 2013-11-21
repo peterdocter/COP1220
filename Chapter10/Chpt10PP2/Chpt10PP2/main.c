@@ -17,23 +17,94 @@
 #include <stdio.h>
 
 typedef struct {
-	
-   	char	elementName[80];
-    int		atmomicNum;
+	char	elementName[80];
+	int		atmomicNum;
 	char	chemicalSymbol[2];
 	char	class[80];
 	int		atomicWeight;
 	int		shell1, shell2, shell3, shell4, shell5, shell6, shell7;
-    
 } element_t;
 
 void myMain();
 
+void enterElementName();
+
+void enterAtomicNumber();
+
+void enterChemicalSymbol();
+
+void enterClass();
+
+void enterAtomicWeight();
+
+void enterShellOne();
+
+void enterShellTwo();
+
+void enterShellThree();
+
+void enterShellFour();
+
+void enterShellFive();
+
+void enterShellSix();
+
+void enterShellSeven();
+
 int main(int argc, const char *argv[])
 {
-
-    
+	myMain();
 	return 0;
 }
 
-void myMain(){}
+void myMain() {
+    
+ enterElementName();
+
+ enterAtomicNumber();
+
+ enterChemicalSymbol();
+
+ enterClass();
+
+ enterAtomicWeight();
+
+ enterShellOne();
+
+ enterShellTwo();
+
+ enterShellThree();
+
+ enterShellFour();
+
+ enterShellFive();
+
+ enterShellSix();
+
+ enterShellSeven();
+
+}
+
+void enterElementName() {}
+
+void enterAtomicNumber() {}
+
+void enterChemicalSymbol() {}
+
+void enterClass() {}
+
+void enterAtomicWeight() {}
+
+void enterShellOne() {}
+
+void enterShellTwo() {}
+
+void enterShellThree() {}
+
+void enterShellFour() {}
+
+void enterShellFive() {}
+
+void enterShellSix() {}
+
+void enterShellSeven() {}
