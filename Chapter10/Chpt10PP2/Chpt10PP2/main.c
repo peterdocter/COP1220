@@ -14,6 +14,7 @@
  *
  *
  */
+
 #include <stdio.h>
 
 typedef struct {
@@ -26,6 +27,8 @@ typedef struct {
 } element_t;
 
 void myMain();
+
+void getMembers();
 
 void enterElementName();
 
@@ -56,33 +59,39 @@ int main(int argc, const char *argv[])
 	myMain();
 	return 0;
 }
+void myMain(){
 
-void myMain() {
     
- enterElementName();
+    getMembers();
 
- enterAtomicNumber();
+    
+}
 
- enterChemicalSymbol();
+void getMembers()
+{
+	enterElementName();
 
- enterClass();
+	enterAtomicNumber();
 
- enterAtomicWeight();
+	enterChemicalSymbol();
 
- enterShellOne();
+	enterClass();
 
- enterShellTwo();
+	enterAtomicWeight();
 
- enterShellThree();
+	enterShellOne();
 
- enterShellFour();
+	enterShellTwo();
 
- enterShellFive();
+	enterShellThree();
 
- enterShellSix();
+	enterShellFour();
 
- enterShellSeven();
+	enterShellFive();
 
+	enterShellSix();
+
+	enterShellSeven();
 }
 
 void enterElementName() {}
