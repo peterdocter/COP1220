@@ -109,7 +109,8 @@ void enterElementName() {
 
 void enterAtomicNumber() {
 
-    scanInt(&element_t.atmomicNum, LINE_LENGTH);
+    scanf("\n%i", &element_t.atmomicNum);
+    //scanInt(&element_t.atmomicNum, LINE_LENGTH);
     printf("The Atomic Number is - %u\n",element_t.atmomicNum);
 
 
