@@ -17,6 +17,7 @@
 
 #include <stdio.h>
 #define ZERO 0
+#define LINE_LENGTH 80
 
 struct {
 	char	elementName[80];
@@ -97,7 +98,7 @@ void getMembers()
 
 void enterElementName() {
 
-    scanString(element_t.elementName, 80);
+    scanString(element_t.elementName, LINE_LENGTH);
     printf("%s",element_t.elementName);
     
 }
