@@ -19,6 +19,8 @@
 #define ZERO 0
 #define LINE_LENGTH 10
 
+char resetString;
+
 struct {
 	char	elementName[80];
 	int		atmomicNum;
@@ -115,7 +117,7 @@ void enterAtomicNumber() {
 
 void enterChemicalSymbol() {
 
-    scanString(element_t.elementName, LINE_LENGTH);
+    scanString(&resetString, LINE_LENGTH);//TODO: debug this
     scanString(element_t.chemicalSymbol, LINE_LENGTH);
     printf("The Chemical Symbol is - %s\n",element_t.chemicalSymbol);
     
