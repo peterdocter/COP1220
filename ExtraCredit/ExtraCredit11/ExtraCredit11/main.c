@@ -23,63 +23,36 @@
 
 double	firstArray[] = {-10.5, -1.8, 3.5, 6.3, 7.2};
 double	secondArray[] = {-1.8, 3.1, 6.3};
-double	thirdArray[];
+double	thirdArray[100];
+	int j = 0;
 
 void sortAndMerge(double *fA, double *fB);
 
 int main(int argc, const char *argv[])
 {
-	int j = 0;
+	for (int i = 0; i != ((sizeof firstArray / sizeof *firstArray) | (sizeof secondArray / sizeof *secondArray)); i++) {
 
-	sortAndMerge(firstArray, secondArray);
-
-	for (int i = 0; i < ((sizeof firstArray / sizeof *firstArray) | (sizeof secondArray / sizeof *secondArray)); i++) {
-		//printf("\nfirstArray[%i]  = %.2lf\n", i, firstArray[i]);
-		//printf("\nsecondArray[%i] = %.2lf\n", i, secondArray[i]);
+		printf("\nfirstArray[%i]  = %.2lf\n", i, firstArray[i]);
+		printf("\nsecondArray[%i] = %.2lf\n", i, secondArray[i]);
+		printf("\nthirdArray[%i] = %lf\n", i, thirdArray[i]);
 
 		// double	firstArray[] = {-10.5, -1.8, 3.5, 6.3, 7.2};
 		// double	secondArray[] = {-1.8, 3.1, 6.3};
 
 		if (firstArray[i] < secondArray[i]) {
-			
-            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
-            thirdArray[j] = firstArray[i];
-			j++;
-            
-            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
-            thirdArray[j] = secondArray[i];
-            j++;
-            
-            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
-
-            printf("j = %i",j);
-            
+			thirdArray[j] = firstArray[i];
+			thirdArray[j] = secondArray[i];
 		} else {
-			
-            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
-            thirdArray[j]	= secondArray[i];
-			j++;
-            
-            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
-            thirdArray[j] = firstArray[i];
-            
-            printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
-            
-            printf("j = %i",j);
-
-        }
-
-		// j++;
-
-		printf("\nthirdArray[%i] = %lf\n", j, thirdArray[j]);
-	}
-
-	for (int i = 0; i < sizeof secondArray / sizeof *secondArray; i++) {
-		// printf("\nsecondArray[%i] = %lf\n", i, secondArray[i]);
+			thirdArray[j] = secondArray[i];
+			thirdArray[j] = firstArray[i];
+		}
+        
+        printf("\nfirstArray[%i]  = %.2lf\n", i, firstArray[i]);
+		printf("\nsecondArray[%i] = %.2lf\n", i, secondArray[i]);
+		printf("\nthirdArray[%i] = %lf\n", i, thirdArray[i]);
 	}
 
 	return 0;
 }
 
 void sortAndMerge(double *fA, double *fB) {}
-
