@@ -17,7 +17,7 @@
 
 #include <stdio.h>
 #define ZERO 0
-#define LINE_LENGTH 80
+#define LINE_LENGTH 10
 
 struct {
 	char	elementName[80];
@@ -101,19 +101,26 @@ void getMembers()
 void enterElementName() {
 
     scanString(element_t.elementName, LINE_LENGTH);
-    printf("\%s\n",element_t.elementName);
+    printf("The element Name is - %s\n",element_t.elementName);
     
 }
 
 void enterAtomicNumber() {
 
     scanInt(&element_t.atmomicNum, LINE_LENGTH);
-    printf("\n%u\n",element_t.atmomicNum);
+    printf("The Atomic Number is - %u\n",element_t.atmomicNum);
 
 
 }
 
-void enterChemicalSymbol() {}
+void enterChemicalSymbol() {
+
+    scanString(element_t.elementName, LINE_LENGTH);
+    scanString(element_t.chemicalSymbol, LINE_LENGTH);
+    printf("The Chemical Symbol is - %s\n",element_t.chemicalSymbol);
+    
+
+}
 
 void enterClass() {}
 
@@ -134,7 +141,6 @@ void enterShellSix() {}
 void enterShellSeven() {}
 
 
-//func(scanLine(input, LINE), output, (int)strlen(input) + 1);
 
 // Based on Figure 8.15 in Book
 char *scanString(char *dest, int dest_len)
@@ -159,23 +165,7 @@ char *scanString(char *dest, int dest_len)
 // Based on Figure 8.15 in Book
 int *scanInt(int *dest, int dest_len)
 {
-	//int i, ch;
-    
-	//i = ZERO;
-    
-	//for (ch = getchar(); ch != '\n' && ch != EOF && i < dest_len - 1; ch = getchar()) {
-	//	dest[i++] = ch;
-	//}
-    
-	//dest[i] = '\0';
-    
-	//while (ch != '\n' && ch != EOF) {
-	//	ch = getchar();
-	//}
-    
     scanf("\n%i", dest);
-;
-    
 	return dest;
 }
 
