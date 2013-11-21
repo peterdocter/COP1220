@@ -16,7 +16,7 @@
  */
 
 #include <stdio.h>
-#define ZERO 0
+#define ZERO		0
 #define LINE_LENGTH 10
 
 char resetString;
@@ -100,29 +100,24 @@ void getMembers()
 	enterShellSeven();
 }
 
-void enterElementName() {
-
-    scanString(element_t.elementName, LINE_LENGTH);
-    printf("The element Name is - %s\n",element_t.elementName);
-    
+void enterElementName()
+{
+	scanString(element_t.elementName, LINE_LENGTH);
+	printf("The element Name is - %s\n", element_t.elementName);
 }
 
-void enterAtomicNumber() {
-
-    scanf("\n%i", &element_t.atmomicNum);
-    //scanInt(&element_t.atmomicNum, LINE_LENGTH);
-    printf("The Atomic Number is - %u\n",element_t.atmomicNum);
-
-
+void enterAtomicNumber()
+{
+	scanf("\n%i", &element_t.atmomicNum);
+	// scanInt(&element_t.atmomicNum, LINE_LENGTH);
+	printf("The Atomic Number is - %u\n", element_t.atmomicNum);
 }
 
-void enterChemicalSymbol() {
-
-    scanString(&resetString, LINE_LENGTH);//TODO: debug this
-    scanString(element_t.chemicalSymbol, LINE_LENGTH);
-    printf("The Chemical Symbol is - %s\n",element_t.chemicalSymbol);
-    
-
+void enterChemicalSymbol()
+{
+	scanString(&resetString, LINE_LENGTH);	// TODO: debug this
+	scanString(element_t.chemicalSymbol, LINE_LENGTH);
+	printf("The Chemical Symbol is - %s\n", element_t.chemicalSymbol);
 }
 
 void enterClass() {}
@@ -142,8 +137,6 @@ void enterShellFive() {}
 void enterShellSix() {}
 
 void enterShellSeven() {}
-
-
 
 // Based on Figure 8.15 in Book
 char *scanString(char *dest, int dest_len)
@@ -165,10 +158,8 @@ char *scanString(char *dest, int dest_len)
 	return dest;
 }
 
-// Based on Figure 8.15 in Book
 int *scanInt(int *dest, int dest_len)
 {
-    scanf("\n%i", dest);
+	scanf("\n%i", dest);
 	return dest;
 }
-
