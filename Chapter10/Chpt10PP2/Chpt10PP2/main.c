@@ -34,6 +34,8 @@ void getMembers();
 
 char *scanString(char *dest, int dest_len);
 
+int *scanInt(int *dest, int dest_len);
+
 void enterElementName();
 
 void enterAtomicNumber();
@@ -99,11 +101,17 @@ void getMembers()
 void enterElementName() {
 
     scanString(element_t.elementName, LINE_LENGTH);
-    printf("%s",element_t.elementName);
+    printf("\%s\n",element_t.elementName);
     
 }
 
-void enterAtomicNumber() {}
+void enterAtomicNumber() {
+
+    scanInt(&element_t.atmomicNum, LINE_LENGTH);
+    printf("\n%u\n",element_t.atmomicNum);
+
+
+}
 
 void enterChemicalSymbol() {}
 
@@ -147,3 +155,27 @@ char *scanString(char *dest, int dest_len)
 
 	return dest;
 }
+
+// Based on Figure 8.15 in Book
+int *scanInt(int *dest, int dest_len)
+{
+	//int i, ch;
+    
+	//i = ZERO;
+    
+	//for (ch = getchar(); ch != '\n' && ch != EOF && i < dest_len - 1; ch = getchar()) {
+	//	dest[i++] = ch;
+	//}
+    
+	//dest[i] = '\0';
+    
+	//while (ch != '\n' && ch != EOF) {
+	//	ch = getchar();
+	//}
+    
+    scanf("\n%i", dest);
+;
+    
+	return dest;
+}
+
