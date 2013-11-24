@@ -102,12 +102,16 @@ void getMembers()
 
 void enterElementName()
 {
+    
+    printf("Please enter the Element Name ---> ");
 	scanString(element_t.elementName, LINE_LENGTH);
 	printf("The element Name is - %s\n", element_t.elementName);
 }
 
 void enterAtomicNumber()
 {
+    printf("Please enter the Atomic Number ---> ");
+
 	scanf("\n%i", &element_t.atmomicNum);
 	// scanInt(&element_t.atmomicNum, LINE_LENGTH);
 	printf("The Atomic Number is - %u\n", element_t.atmomicNum);
@@ -115,28 +119,73 @@ void enterAtomicNumber()
 
 void enterChemicalSymbol()
 {
+    
+    printf("Please enter the Chemical Symbol ---> ");
 	scanString(&resetString, LINE_LENGTH);	// TODO: debug this
 	scanString(element_t.chemicalSymbol, LINE_LENGTH);
 	printf("The Chemical Symbol is - %s\n", element_t.chemicalSymbol);
 }
 
-void enterClass() {}
+void enterClass() {
+    printf("Please enter the Element Class ---> ");
 
-void enterAtomicWeight() {}
 
-void enterShellOne() {}
+}
 
-void enterShellTwo() {}
+void enterAtomicWeight() {
 
-void enterShellThree() {}
+    
+    printf("Please enter the Atmomic Weight ---> ");
 
-void enterShellFour() {}
 
-void enterShellFive() {}
+}
 
-void enterShellSix() {}
+void enterShellOne() {
 
-void enterShellSeven() {}
+    
+    printf("Please enter the Shell One ---> ");
+
+}
+
+void enterShellTwo() {
+
+    printf("Please enter the Shell Two ---> ");
+
+
+}
+
+void enterShellThree() {
+
+    
+    printf("Please enter the Shell Three ---> ");
+
+}
+
+void enterShellFour() {
+
+    printf("Please enter the Shell Four ---> ");
+
+}
+
+void enterShellFive() {
+
+
+    printf("Please enter the Shell Five ---> ");
+
+}
+
+void enterShellSix() {
+
+    
+    printf("Please enter the Shell Six ---> ");
+
+}
+
+void enterShellSeven() {
+
+
+    printf("Please enter the Shell Seven ---> ");
+}
 
 // Based on Figure 8.15 in Book
 char *scanString(char *dest, int dest_len)
