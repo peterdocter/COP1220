@@ -124,6 +124,7 @@ void enterChemicalSymbol()
 	scanString(&resetString, LINE_LENGTH);	// TODO: debug this
 	scanString(element_t.chemicalSymbol, LINE_LENGTH);
 	printf("The Chemical Symbol is - %s\n", element_t.chemicalSymbol);
+
 }
 
 void enterClass() {
