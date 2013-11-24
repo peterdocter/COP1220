@@ -127,6 +127,8 @@ void enterChemicalSymbol()
 }
 
 void enterClass() {
+    
+    
     printf("Please enter the Element Class ---> ");
 
 
@@ -149,8 +151,8 @@ void enterShellOne() {
 
 void enterShellTwo() {
 
+    
     printf("Please enter the Shell Two ---> ");
-
 
 }
 
@@ -163,6 +165,7 @@ void enterShellThree() {
 
 void enterShellFour() {
 
+    
     printf("Please enter the Shell Four ---> ");
 
 }
@@ -185,6 +188,7 @@ void enterShellSeven() {
 
 
     printf("Please enter the Shell Seven ---> ");
+
 }
 
 // Based on Figure 8.15 in Book
