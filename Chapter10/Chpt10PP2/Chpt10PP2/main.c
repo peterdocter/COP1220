@@ -24,7 +24,7 @@ char resetString;
 struct {
 	char	elementName[80];
 	int		atomicNum;
-	char	chemicalSymbol[2];
+	char	chemicalSymbol[80];
 	char	class[80];
 	int		atomicWeight;
 	int		shell1, shell2, shell3, shell4, shell5, shell6, shell7;
@@ -78,12 +78,12 @@ void myMain()
 void getMembers()
 {
 	enterElementName();
+	enterChemicalSymbol();
+	enterClass();
 
 	enterAtomicNumber();
 
-	enterChemicalSymbol();
 
-	enterClass();
 
 	enterAtomicWeight();
 
@@ -113,22 +113,11 @@ void enterElementName()
 	printf("The element Name is - %s\n", element_t.elementName);
 
 }
-
-void enterAtomicNumber()
-{
-
-    printf("Please enter the Atomic Number ---> ");
-	scanf("\n%i", &element_t.atomicNum);
-	// scanInt(&element_t.atomicNum, LINE_LENGTH);
-	printf("The Atomic Number is - %u\n", element_t.atomicNum);
-
-}
-
 void enterChemicalSymbol()
 {
     
     printf("Please enter the Chemical Symbol ---> ");
-	scanString(&resetString, LINE_LENGTH);	// TODO: debug this
+	//scanString(&resetString, LINE_LENGTH);	// TODO: debug this
 	scanString(element_t.chemicalSymbol, LINE_LENGTH);
 	printf("The Chemical Symbol is - %s\n", element_t.chemicalSymbol);
 
@@ -143,13 +132,24 @@ void enterClass()
 	printf("The Class is - %s\n", element_t.class);
 
 }
+void enterAtomicNumber()
+{
+
+    printf("Please enter the Atomic Number ---> ");
+	//scanf("\n%i", &element_t.atomicNum);
+	scanInt(&element_t.atomicNum, LINE_LENGTH);
+	printf("The Atomic Number is - %u\n", element_t.atomicNum);
+
+}
+
+
 
 void enterAtomicWeight()
 {
     
     printf("Please enter the Atomic Weight ---> ");
-    scanf("\n%i", &element_t.atomicWeight);
-	// scanInt(&element_t.atomicNum, LINE_LENGTH);
+    //scanf("\n%i", &element_t.atomicWeight);
+	scanInt(&element_t.atomicWeight, LINE_LENGTH);
 	printf("The Atomic Number is - %i\n", element_t.atomicWeight);
 
 }
@@ -158,8 +158,8 @@ void enterShellOne()
 {
     
     printf("Please enter the Shell One ---> ");
-    scanf("\n%i", &element_t.shell1);
-	// scanInt(&element_t.atomicNum, LINE_LENGTH);
+    //scanf("\n%i", &element_t.shell1);
+    scanInt(&element_t.shell1, LINE_LENGTH);
 	printf("The Atomic Number is - %u\n", element_t.shell1);
 
 }
@@ -168,8 +168,8 @@ void enterShellTwo()
 {
     
     printf("Please enter the Shell Two ---> ");
-    scanf("\n%i", &element_t.shell2);
-	// scanInt(&element_t.atomicNum, LINE_LENGTH);
+    //scanf("\n%i", &element_t.shell2);
+	scanInt(&element_t.shell2, LINE_LENGTH);
 	printf("The Atomic Number is - %u\n", element_t.shell2);
 
 }
@@ -178,8 +178,8 @@ void enterShellThree()
 {
     
     printf("Please enter the Shell Three ---> ");
-    scanf("\n%i", &element_t.shell3);
-	// scanInt(&element_t.atomicNum, LINE_LENGTH);
+    //scanf("\n%i", &element_t.shell3);
+	scanInt(&element_t.shell2, LINE_LENGTH);
 	printf("The Atomic Number is - %u\n", element_t.shell3);
 
 }
@@ -188,8 +188,8 @@ void enterShellFour()
 {
     
     printf("Please enter the Shell Four ---> ");
-    scanf("\n%i", &element_t.shell4);
-	// scanInt(&element_t.atomicNum, LINE_LENGTH);
+    //scanf("\n%i", &element_t.shell4);
+	scanInt(&element_t.shell4, LINE_LENGTH);
 	printf("The Atomic Number is - %u\n", element_t.shell4);
 
 }
@@ -198,8 +198,8 @@ void enterShellFive()
 {
 
     printf("Please enter the Shell Five ---> ");
-    scanf("\n%i", &element_t.shell5);
-	// scanInt(&element_t.atomicNum, LINE_LENGTH);
+    //scanf("\n%i", &element_t.shell5);
+	scanInt(&element_t.shell5, LINE_LENGTH);
 	printf("The Atomic Number is - %u\n", element_t.shell5);
 
 }
@@ -208,8 +208,8 @@ void enterShellSix()
 {
     
     printf("Please enter the Shell Six ---> ");
-    scanf("\n%i", &element_t.shell6);
-	// scanInt(&element_t.atomicNum, LINE_LENGTH);
+    //scanf("\n%i", &element_t.shell6);
+	scanInt(&element_t.shell6, LINE_LENGTH);
 	printf("The Atomic Number is - %u\n", element_t.shell6);
 
 }
@@ -218,8 +218,8 @@ void enterShellSeven()
 {
 
     printf("Please enter the Shell Seven ---> ");
-    scanf("\n%i", &element_t.shell7);
-	// scanInt(&element_t.atomicNum, LINE_LENGTH);
+    //scanf("\n%i", &element_t.shell7);
+	scanInt(&element_t.shell7, LINE_LENGTH);
 	printf("The Atomic Number is - %u\n", element_t.shell7);
 
 }
