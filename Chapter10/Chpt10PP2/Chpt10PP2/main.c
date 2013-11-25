@@ -176,7 +176,7 @@ void enterShellSeven()
 void print_element()
 {
 	// 11 Sodium Na alkali_metal 22.9898 2 8 1 0 0 0 0
-	printf("\n%i %s %s %.80s %.2lf %i %i %i %i %i %i %i\n", element_t.atomicNum, element_t.elementName, element_t.chemicalSymbol, element_t.class, element_t.atomicWeight, element_t.shell[0], element_t.shell[1], element_t.shell[2], element_t.shell[3], element_t.shell[4], element_t.shell[5], element_t.shell[6]);
+	printf("\n%i %s %s %.80s %.4lf %i %i %i %i %i %i %i\n", element_t.atomicNum, element_t.elementName, element_t.chemicalSymbol, element_t.class, element_t.atomicWeight, element_t.shell[0], element_t.shell[1], element_t.shell[2], element_t.shell[3], element_t.shell[4], element_t.shell[5], element_t.shell[6]);
 }
 
 // Based on Figure 8.15 in Book
