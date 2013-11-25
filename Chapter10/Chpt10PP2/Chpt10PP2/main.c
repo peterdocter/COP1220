@@ -106,15 +106,17 @@ void enterElementName()
     printf("Please enter the Element Name ---> ");
 	scanString(element_t.elementName, LINE_LENGTH);
 	printf("The element Name is - %s\n", element_t.elementName);
+
 }
 
 void enterAtomicNumber()
 {
-    printf("Please enter the Atomic Number ---> ");
 
+    printf("Please enter the Atomic Number ---> ");
 	scanf("\n%i", &element_t.atmomicNum);
 	// scanInt(&element_t.atmomicNum, LINE_LENGTH);
 	printf("The Atomic Number is - %u\n", element_t.atmomicNum);
+
 }
 
 void enterChemicalSymbol()
@@ -127,9 +129,9 @@ void enterChemicalSymbol()
 
 }
 
-void enterClass() {
-    
-    
+void enterClass()
+{
+
     printf("Please enter the Element Class ---> ");
     //scanString(&resetString, LINE_LENGTH);	// TODO: debug this
 	scanString(element_t.class, LINE_LENGTH);
@@ -137,19 +139,18 @@ void enterClass() {
 
 }
 
-void enterAtomicWeight() {
-
+void enterAtomicWeight()
+{
     
     printf("Please enter the Atmomic Weight ---> ");
     scanf("\n%i", &element_t.atmomicNum);
 	// scanInt(&element_t.atmomicNum, LINE_LENGTH);
 	printf("The Atomic Number is - %u\n", element_t.atmomicNum);
 
-
 }
 
-void enterShellOne() {
-
+void enterShellOne()
+{
     
     printf("Please enter the Shell One ---> ");
     scanf("\n%i", &element_t.atmomicNum);
@@ -158,8 +159,8 @@ void enterShellOne() {
 
 }
 
-void enterShellTwo() {
-
+void enterShellTwo()
+{
     
     printf("Please enter the Shell Two ---> ");
     scanf("\n%i", &element_t.atmomicNum);
@@ -168,8 +169,8 @@ void enterShellTwo() {
 
 }
 
-void enterShellThree() {
-
+void enterShellThree()
+{
     
     printf("Please enter the Shell Three ---> ");
     scanf("\n%i", &element_t.atmomicNum);
@@ -178,8 +179,8 @@ void enterShellThree() {
 
 }
 
-void enterShellFour() {
-
+void enterShellFour()
+{
     
     printf("Please enter the Shell Four ---> ");
     scanf("\n%i", &element_t.atmomicNum);
@@ -188,8 +189,8 @@ void enterShellFour() {
 
 }
 
-void enterShellFive() {
-
+void enterShellFive()
+{
 
     printf("Please enter the Shell Five ---> ");
     scanf("\n%i", &element_t.atmomicNum);
@@ -198,8 +199,8 @@ void enterShellFive() {
 
 }
 
-void enterShellSix() {
-
+void enterShellSix()
+{
     
     printf("Please enter the Shell Six ---> ");
     scanf("\n%i", &element_t.atmomicNum);
@@ -208,8 +209,8 @@ void enterShellSix() {
 
 }
 
-void enterShellSeven() {
-
+void enterShellSeven()
+{
 
     printf("Please enter the Shell Seven ---> ");
     scanf("\n%i", &element_t.atmomicNum);
