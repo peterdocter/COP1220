@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 char name_txt_in[50],
 	name_bin_out[50];
@@ -22,26 +23,24 @@ FILE	*text_inp, *text_outp;
 char	ch;
 
 void myMain();
+
+char returnTime();
 void openFiles();
 void closeFiles();
 void copyChars();
 
 int main(int argc, const char *argv[])
 {
-
 	myMain();
 	return 0;
-
 }
 
 void myMain()
 {
-	
-    openFiles();
-
+	openFiles();
 	copyChars();
-
 	closeFiles();
+    printf("\n");
 
 }
 
@@ -59,14 +58,34 @@ void copyChars()
 			}
 		}
 	}
+}
+
+
+char returnTime(){
+
+    char buff[100];
+    time_t now = time (0);
+    strftime (buff, 100, "%Y-%m-%d %H:%M:%S", localtime (&now));
+    printf ("%s\n", strncat(buff, ".txt", 4));
+    strncat(buff, ".txt", 4);
     
+    return *buff;
 }
 
 void openFiles()
 {
-	
-    text_inp	= fopen("abc.txt", "r");
-	text_outp	= fopen("result.txt", "w");
+    
+    //char buff[100];
+    //time_t now = time (0);
+    //strftime (buff, 100, "%Y-%m-%d %H:%M:%S", localtime (&now));
+    //printf ("%s\n", buff);
+    
+    char time[100];
+    time[99] = returnTime();
+    
+	text_inp	= fopen("abc.txt", "r");
+    text_outp	= fopen(time, "w");//unique file name
+   	//text_outp	= fopen(__DATE__"result.txt", "w");
 
 	if (text_inp == NULL) {
 		printf("Cannot open abc.txt for input\n");
@@ -75,13 +94,10 @@ void openFiles()
 	if (text_outp == NULL) {
 		printf("Cannot open results.txt for input\n");
 	}
-
 }
 
 void closeFiles()
 {
-
 	fclose(text_inp);
 	fclose(text_outp);
-
 }
