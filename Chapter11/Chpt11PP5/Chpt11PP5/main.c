@@ -12,10 +12,8 @@
  
  */
 
-
 #include <stdio.h>
-
-
+#include <string.h>
 
 char name_txt_in[50],
 name_bin_out[50];
@@ -31,14 +29,12 @@ int main(int argc, const char * argv[])
     return 0;
 }
 
-
 void myMain(){
     
     openFiles();
     closeFiles();
  
 }
-
 
 void openFiles(){
 
@@ -50,10 +46,20 @@ void openFiles(){
     if (text_outp == NULL)
         printf("Cannot open results.txt for input\n");
     
-    
     // Make backup copy one character at a time
-     for (ch = getc(text_inp); ch != EOF; ch = getc(text_inp))
-     putc(ch, text_outp);
+    for (ch = getc(text_inp); ch != EOF; ch = getc(text_inp)){
+     
+        if (strcmp(&ch, " ")) {
+            
+        putc(ch, text_outp);
+        printf("%c",ch);
+
+        } else {
+            putc('\n', text_outp);
+            printf("\n");
+        }
+           
+    }
 
 }
 
@@ -69,3 +75,20 @@ void closeFiles(){
         printf("Closed results.txt for input\n");
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
