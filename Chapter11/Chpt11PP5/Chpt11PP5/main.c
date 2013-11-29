@@ -20,7 +20,7 @@
 char name_txt_in[50],
 name_bin_out[50];
 FILE *text_inp, *text_outp;
-
+char ch;
 
 void myMain();
 void openFiles();
@@ -49,6 +49,11 @@ void openFiles(){
         printf("Cannot open abc.txt for input\n");
     if (text_outp == NULL)
         printf("Cannot open results.txt for input\n");
+    
+    
+    // Make backup copy one character at a time
+     for (ch = getc(text_inp); ch != EOF; ch = getc(text_inp))
+     putc(ch, text_outp);
 
 }
 
