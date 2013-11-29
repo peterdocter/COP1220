@@ -13,14 +13,17 @@
  *
  */
 
+// Met all the specs as opposed to the modified specs that were given during class
+// Also included code to modify the .txt file name to create unique instances of the file
+// Doing so made it easier to develop and debug
+
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
 
-char name_txt_in[50],
-	name_bin_out[50];
 FILE	*text_inp, *text_outp;
 char	ch;
+int		error = 0;
 
 void myMain();
 
@@ -43,57 +46,39 @@ void myMain()
 	copyChars();
 
 	closeFiles();
-	printf("\n");
+	// printf("\n");
 }
 
 void copyChars()
 {
 	int c	= 0;
 	int n	= 1;
-    char new_str;
-    
-	// Make backup copy one character at a time
-	for (ch = getc(text_inp); ch != EOF; ch = getc(text_inp)) {
-		if (strcmp(&ch, ".")) {
-			//            printf("%i ",n);
 
-			if (strcmp(&ch, " ")) {
-				putc(ch, text_outp);
-               
-
-				printf("%c", ch);
-                
-                
-			
-            } else {
-                
-                 char dig = '0'+c;
-                //char dig = (char)(((int)'0')+c);
-                //printf("%c", dig);
-                putc(' ',text_outp);
-				putc(dig, text_outp);
-				putc('\n', text_outp);
-				printf(" %i\n", c);
-				c = -1;
-				n++;
+	if (error != 1) {
+		for (ch = getc(text_inp); ch != EOF; ch = getc(text_inp)) {
+			if (strcmp(&ch, ".")) {
+				if (strcmp(&ch, " ")) {
+					putc(ch, text_outp);
+					// printf("%c", ch);
+				} else {
+					char dig = '0' + c;
+					putc(' ', text_outp);
+					putc(dig, text_outp);
+					putc('\n', text_outp);
+					// printf(" %i\n", c);
+					c = -1;
+					n++;
+				}
 			}
+
+			c++;
 		}
 
-		c++;
+		char dig = '0' + c;
+		putc(' ', text_outp);
+		putc(dig, text_outp);
+		printf("There are %i words in the file.\n", n);
 	}
-    
-    
-    char dig = '0'+c;
-    //char dig = (char)(((int)'0')+c);
-    //printf("%c", dig);
-    putc(' ',text_outp);
-    putc(dig, text_outp);
-
-    
-    
-    //printf(" %i\n", c-1);//final c
-
-	printf("\nThere are %i words in the file.\n", n);
 }
 
 void openFiles()
@@ -102,18 +87,18 @@ void openFiles()
 	time_t	now = time(0);
 
 	strftime(buff, 100, "%Y-%m-%d %H:%M:%S", localtime(&now));
-	// printf("%s\n", buff);
 
 	text_inp	= fopen("abc.txt", "r");
 	text_outp	= fopen(__DATE__ "_"__TIME__ ".txt", "w");	// unique file name
-	// text_outp	= fopen(__DATE__"result.txt", "w");
 
 	if (text_inp == NULL) {
 		printf("Cannot open abc.txt for input\n");
+		error = 1;
 	}
 
 	if (text_outp == NULL) {
 		printf("Cannot open results.txt for input\n");
+		error = 1;
 	}
 }
 
