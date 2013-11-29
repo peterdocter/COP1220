@@ -50,7 +50,8 @@ void copyChars()
 {
 	int c	= 0;
 	int n	= 1;
-
+    char new_str;
+    
 	// Make backup copy one character at a time
 	for (ch = getc(text_inp); ch != EOF; ch = getc(text_inp)) {
 		if (strcmp(&ch, ".")) {
@@ -58,8 +59,19 @@ void copyChars()
 
 			if (strcmp(&ch, " ")) {
 				putc(ch, text_outp);
+               
+
 				printf("%c", ch);
-			} else {
+                
+                
+			
+            } else {
+                
+                 char dig = '0'+c;
+                //char dig = (char)(((int)'0')+c);
+                //printf("%c", dig);
+                putc(' ',text_outp);
+				putc(dig, text_outp);
 				putc('\n', text_outp);
 				printf(" %i\n", c);
 				c = -1;
@@ -69,6 +81,15 @@ void copyChars()
 
 		c++;
 	}
+    
+    
+    char dig = '0'+c;
+    //char dig = (char)(((int)'0')+c);
+    //printf("%c", dig);
+    putc(' ',text_outp);
+    putc(dig, text_outp);
+
+    
     
     printf(" %i\n", c-1);//final c
 
