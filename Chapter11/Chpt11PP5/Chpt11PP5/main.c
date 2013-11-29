@@ -15,7 +15,15 @@
 
 #include <stdio.h>
 
+
+
+char name_txt_in[50],
+name_bin_out[50];
+FILE *text_inp, *text_outp;
+
+
 void myMain();
+void openFiles();
 
 int main(int argc, const char * argv[])
 {
@@ -23,9 +31,16 @@ int main(int argc, const char * argv[])
     return 0;
 }
 
+void openFiles(){}
 void myMain(){
 
+    // text_inp = fopen(name_txt_in, "r");
+    text_inp = fopen("abc.txt", "r");
+    text_outp = fopen("result.txt", "w");
     
-    
+    if (text_inp == NULL)
+        printf("Cannot open abc.txt for input\n");
+    if (text_outp == NULL)
+        printf("Cannot open results.txt for input\n");
 
 }
