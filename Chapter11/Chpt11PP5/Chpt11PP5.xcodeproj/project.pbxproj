@@ -29,7 +29,6 @@
 		48A6E0321848386300EDE2A2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		48A6E0341848386300EDE2A2 /* Chpt11PP5.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Chpt11PP5.1; sourceTree = "<group>"; };
 		48A6E03B1848392400EDE2A2 /* abc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abc.txt; sourceTree = "<group>"; };
-		48AD68F91848E108007D0F9A /* Screen Shot 2013-11-29 at 9.49.06 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2013-11-29 at 9.49.06 AM.png"; path = "../../Screen Shot 2013-11-29 at 9.49.06 AM.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +62,6 @@
 		48A6E0311848386300EDE2A2 /* Chpt11PP5 */ = {
 			isa = PBXGroup;
 			children = (
-				48AD68F91848E108007D0F9A /* Screen Shot 2013-11-29 at 9.49.06 AM.png */,
 				48A6E0321848386300EDE2A2 /* main.c */,
 				48A6E0341848386300EDE2A2 /* Chpt11PP5.1 */,
 			);
