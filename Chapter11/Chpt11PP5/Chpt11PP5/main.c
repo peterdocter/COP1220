@@ -91,7 +91,7 @@ void copyChars()
 
     
     
-    printf(" %i\n", c-1);//final c
+    //printf(" %i\n", c-1);//final c
 
 	printf("\nThere are %i words in the file.\n", n);
 }
