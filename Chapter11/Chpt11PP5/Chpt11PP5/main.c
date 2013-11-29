@@ -23,6 +23,8 @@ char ch;
 void myMain();
 void openFiles();
 void closeFiles();
+void copyChars();
+
 int main(int argc, const char * argv[])
 {
     myMain();
@@ -32,8 +34,34 @@ int main(int argc, const char * argv[])
 void myMain(){
     
     openFiles();
+    
+    copyChars();
+    
     closeFiles();
  
+}
+
+void copyChars(){
+
+    // Make backup copy one character at a time
+    for (ch = getc(text_inp); ch != EOF; ch = getc(text_inp)){
+     
+        if (strcmp(&ch, ".")) {
+        
+        
+        if (strcmp(&ch, " ")) {
+            
+        putc(ch, text_outp);
+        printf("%c",ch);
+
+        } else {
+            putc('\n', text_outp);
+            printf("\n");
+        }
+        }
+    }
+    
+
 }
 
 void openFiles(){
@@ -46,20 +74,6 @@ void openFiles(){
     if (text_outp == NULL)
         printf("Cannot open results.txt for input\n");
     
-    // Make backup copy one character at a time
-    for (ch = getc(text_inp); ch != EOF; ch = getc(text_inp)){
-     
-        if (strcmp(&ch, " ")) {
-            
-        putc(ch, text_outp);
-        printf("%c",ch);
-
-        } else {
-            putc('\n', text_outp);
-            printf("\n");
-        }
-           
-    }
 
 }
 
