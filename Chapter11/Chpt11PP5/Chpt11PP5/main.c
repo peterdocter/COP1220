@@ -24,17 +24,24 @@ FILE *text_inp, *text_outp;
 
 void myMain();
 void openFiles();
-
+void closeFiles();
 int main(int argc, const char * argv[])
 {
     myMain();
     return 0;
 }
 
-void openFiles(){}
-void myMain(){
 
-    // text_inp = fopen(name_txt_in, "r");
+void myMain(){
+    
+    openFiles();
+    closeFiles();
+ 
+}
+
+
+void openFiles(){
+
     text_inp = fopen("abc.txt", "r");
     text_outp = fopen("result.txt", "w");
     
@@ -42,5 +49,18 @@ void myMain(){
         printf("Cannot open abc.txt for input\n");
     if (text_outp == NULL)
         printf("Cannot open results.txt for input\n");
+
+}
+
+void closeFiles(){
+
+    
+    fclose(text_inp);
+    fclose(text_outp);
+    
+    if (text_inp == NULL)
+        printf("Closed abc.txt for input\n");
+    if (text_outp == NULL)
+        printf("Closed results.txt for input\n");
 
 }
