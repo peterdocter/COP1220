@@ -28,6 +28,7 @@
 		48A6E02F1848386300EDE2A2 /* Chpt11PP5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Chpt11PP5; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A6E0321848386300EDE2A2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		48A6E0341848386300EDE2A2 /* Chpt11PP5.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Chpt11PP5.1; sourceTree = "<group>"; };
+		48A6E03B1848392400EDE2A2 /* abc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abc.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +45,7 @@
 		48A6E0261848386300EDE2A2 = {
 			isa = PBXGroup;
 			children = (
+				48A6E03B1848392400EDE2A2 /* abc.txt */,
 				48A6E0311848386300EDE2A2 /* Chpt11PP5 */,
 				48A6E0301848386300EDE2A2 /* Products */,
 			);
