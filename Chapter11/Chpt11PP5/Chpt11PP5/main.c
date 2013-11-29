@@ -24,9 +24,10 @@ char	ch;
 
 void myMain();
 
-char returnTime();
 void openFiles();
+
 void closeFiles();
+
 void copyChars();
 
 int main(int argc, const char *argv[])
@@ -38,54 +39,53 @@ int main(int argc, const char *argv[])
 void myMain()
 {
 	openFiles();
-	copyChars();
-	closeFiles();
-    printf("\n");
 
+	copyChars();
+
+	closeFiles();
+	printf("\n");
 }
 
 void copyChars()
 {
+	int c	= 0;
+	int n	= 1;
+
 	// Make backup copy one character at a time
 	for (ch = getc(text_inp); ch != EOF; ch = getc(text_inp)) {
 		if (strcmp(&ch, ".")) {
+			//            printf("%i ",n);
+
 			if (strcmp(&ch, " ")) {
 				putc(ch, text_outp);
 				printf("%c", ch);
 			} else {
 				putc('\n', text_outp);
-				printf("\n");
+				printf(" %i\n", c);
+				c = -1;
+				n++;
 			}
 		}
+
+		c++;
 	}
-}
-
-
-char returnTime(){
-
-    char buff[100];
-    time_t now = time (0);
-    strftime (buff, 100, "%Y-%m-%d %H:%M:%S", localtime (&now));
-    printf ("%s\n", strncat(buff, ".txt", 4));
-    strncat(buff, ".txt", 4);
     
-    return *buff;
+    printf(" %i\n", c-1);//final c
+
+	printf("\nThere are %i words in the file.\n", n);
 }
 
 void openFiles()
 {
-    
-    //char buff[100];
-    //time_t now = time (0);
-    //strftime (buff, 100, "%Y-%m-%d %H:%M:%S", localtime (&now));
-    //printf ("%s\n", buff);
-    
-    char time[100];
-    time[99] = returnTime();
-    
+	char	buff[100];
+	time_t	now = time(0);
+
+	strftime(buff, 100, "%Y-%m-%d %H:%M:%S", localtime(&now));
+	// printf("%s\n", buff);
+
 	text_inp	= fopen("abc.txt", "r");
-    text_outp	= fopen(time, "w");//unique file name
-   	//text_outp	= fopen(__DATE__"result.txt", "w");
+	text_outp	= fopen(__DATE__ "_"__TIME__ ".txt", "w");	// unique file name
+	// text_outp	= fopen(__DATE__"result.txt", "w");
 
 	if (text_inp == NULL) {
 		printf("Cannot open abc.txt for input\n");
