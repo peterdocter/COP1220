@@ -1,9 +1,0 @@
-TARGET:names
-init.c
-keyb.c
-keyb.h
-main.c
-makefile
-names.c
-names.h
-readdata.c

@@ -1,9 +1,0 @@
-#!/usr/bin/perl -n
-# recase: lowercases each input line, then upcases
-# the first letter.
-
-$line = $_;
-$line = lc($line);
-#print $line;
-$line =~ m/^(.)(.+)/;
-print uc($1).$2."\n";
